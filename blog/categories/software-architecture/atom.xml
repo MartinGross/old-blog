@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: software-architecture | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/software-architecture/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[UML Notation auf einer Seite]]></title>
+    <link href="http://martingross.github.io/articles/175/uml-notation-auf-einer-seite-erklaert"/>
+    <updated>2011-02-08T11:20:40+01:00</updated>
+    <id>http://martingross.github.io/articles/175/uml-notation-auf-einer-seite-erklaert</id>
+    <content type="html"><![CDATA[<p>Eine der besten und prägnantesten Übersichten für die UML (Unified Modelling Language) habe ich bei "Wikipedia":http://de.wikipedia.org/wiki/Unified_Modeling_Language gefunden.</p>
+
+<p>!http://www.datazoo.de/images/11.png!:http://www.datazoo.de/file_download/1/UML-Diagramme.pdf</p>
+
+<p>Leider wurde es dort nur im PNG bzw. SVG Format veröffentlicht. Daher habe ich es vom Vektorformat direkt nach PDF konvertiert, das sich am besten von allen Formaten ausdrucken läßt.</p>
+
+<p>Herunterzuladen hier:</p>
+
+<p>"UML-Diagramme.pdf":http://www.datazoo.de/file_download/1/UML-Diagramme.pdf</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Web-Services | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/web-services/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Subject Key Identifier (SKI)]]></title>
+    <link href="http://martingross.github.io/articles/136/"/>
+    <updated>2009-07-17T15:50:00+02:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>The "X.509 standard":/article/137/x509-certificate defines extensions for Version 3. One of them is the SKI extension.</p>
+
+<p>From the spec:</p>
+
+<p>bq. "The subject key identifier extension provides a means of identifying certificates that contain a particular public key. To facilitate certification path construction, this extension MUST
+appear in all conforming CA certificates."</p>
+
+<p>The authority key identifier of a certificate contains the value of the subject key identifier of the CA (certificate authority) as a reference to that CA.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[X.509 Certificate]]></title>
+    <link href="http://martingross.github.io/articles/137/x509-certificate"/>
+    <updated>2009-07-17T15:41:00+02:00</updated>
+    <id>http://martingross.github.io/articles/137/x509-certificate</id>
+    <content type="html"><![CDATA[<p>X.509 is a standard for a public key infrastructure (PKI) and specifies, amongst other things, standard formats for public key certificates and certification path validation.</p>
+
+<p>"RFC 3280":http://ftp.isi.edu/in-notes/rfc3280.txt</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Web services security mit WS-Security, Teil 1]]></title>
+    <link href="http://martingross.github.io/articles/126/"/>
+    <updated>2009-02-05T16:42:00+01:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>Zur Zeit arbeite ich in einem grÃ¶ÃŸeren Kundenprojekt, das Schnittstellen Ã¼ber das Internet nach aussen anbietet. Ãœber diese Schnittstellen werden unter anderem externe Buchungssysteme integriert. Als Basistechnologie werden Web Services eingesetzt. Die Verbindung wird Ã¼ber das Internet hergestellt.</p>
+
+<p>Da sensitive sprich wertvolle Daten (z.B. Zahlungsdaten) Ã¼bertragen werden, ist es natÃ¼rlich extrem wichtig die Vertraulichkeit der Ãœbertragung zu gewÃ¤hrleisten. Zum einen mÃ¶chte man verhindern, dass die Kommunikation belauscht werden kann. Zum anderen muss man sich sicher sein, dass das angebundene System wirklich das ist fÃ¼r das es sich ausgibt, um beispielsweise eine "Man in the middle attack":http://de.wikipedia.org/wiki/Man-In-The-Middle-Angriff zu verhindern. D. h. es muss eine gegenseitige "Authentifizierung":http://de.wikipedia.org/wiki/Authentifizierung stattfinden.</p>
+
+<p>Um das zu gewÃ¤hrleisten bietet sich WS-Security an. WS-Security ist einer der unzÃ¤hligen Web Services Standards. WS-Security bietet hierzu verschiedene MÃ¶glichkeiten an, die einem erst einmal die Entscheidung nicht einfach machen, welche man denn nun nehmen soll. In den nÃ¤chsten EintrÃ¤gen hier in diesem "Blog":http://www.datazoo.de/ werde ich auf die gemachten Erfahrungen und theoretischen HintergrÃ¼nde eingehen.</p>
+
+<p>Gerade weil es oft nicht so einfach gelingt, WS-Security ohne Anfangsprobleme einzusetzen, ist ein VerstÃ¤ndnis der Grundlagen unverzichtbar. Wenn dann noch Java und .NET miteinander kommunizieren sollen, erhÃ¶ht man den Schwierigkeitsgrad erheblich, wie sich zeigte.</p>
+
+<p>Hinzu kommen FachausdrÃ¼cke wie Asymmetrisches Kryptosystem, Digitale Zertifikate, Public Key und Private Key etc., die einem den Einstieg auch nicht wirklich einfach machen. Viele Web Services laufen daher unverschlÃ¼sselt oder man setzt auf eine SSL-basierte VerschlÃ¼sselung der gesamten Verbindung (man denke einfach an https), was auch so einige Nachteile hat (doch dazu spÃ¤ter mehr). Es ist also ein spannendes und vielschichtiges Thema.</p>
+
+<p>Fortsetzung folgt ...</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Remote Debugging an Axis2 Web service with Intellij IDEA]]></title>
+    <link href="http://martingross.github.io/articles/125/"/>
+    <updated>2009-02-02T16:50:00+01:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>At "wso2.org":https://wso2.org/library/3851 Eran Chinthaka described how to debug a web service remotely.</p>
+
+<p>I am summarizing the most important things assuming that you have already Axis and your web service deployed to Apache Tomcat. The web service needs to be also available in IDEA as Java source ( of course).</p>
+
+<p>The next steps are:</p>
+
+<h1>Start Tomcat with debugging options</h1>
+
+<h1>Add a new Run/Debug Configuration in Intellij IDEA</h1>
+
+<h1>Choose the configuration and start debug</h1>
+
+<p><em>Start Tomcat with debugging options</em></p>
+
+<p>Add the following JVM parameters to your tomcat start script:</p>
+
+<pre name="code" class="js:nocontrols">
+-Xdebug
+-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
+</pre>
+
+
+<p>Now you are ready to start. Start tomcat and it will listen on port 5005 for your debugger.</p>
+
+<p><em>Add a new Run/Debug Configuration in Intellij IDEA</em></p>
+
+<h1>Goto "Run" menu and select "Edit Configurations".</h1>
+
+<h1>Click on "+" and select "Remote" from the menu. Just keep the default configuration there with Port 5005 and localhost, if Tomcat is running on the same machine as IDEA. Otherwise enter another host.</h1>
+
+<h1>Give a meaningful name in the 'name' text box like 'Local Tomcat Debug' and press "OK". You should now be able to see your new configuration, under the runnable items menu.</h1>
+
+<p>As Eran Chinthaka describes:</p>
+
+<p>bq. "You are now all set to receive debug messages from Tomcat. Mark debugging points at proper locations you want to debug and send a SOAP message to your Web service. You should now be able to see your debug points highlighted when the execution hit those marked locations."</p>
+
+<p><em>Choose the configuration and start debug</em></p>
+
+<p>Choose your configuration from the drop down menu in IDEA button bar. Click on the debug button, to start connecting to Tomcat. Now you are attached to Tomcat and can send requests to your web service.</p>
+]]></content>
+  </entry>
+  
+</feed>

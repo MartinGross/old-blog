@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Software-Entwicklung | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/software-entwicklung/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Building High Performance Development Teams]]></title>
+    <link href="http://martingross.github.io/articles/182/building-high-performance-development-teams"/>
+    <updated>2012-08-08T10:35:22+02:00</updated>
+    <id>http://martingross.github.io/articles/182/building-high-performance-development-teams</id>
+    <content type="html"><![CDATA[<iframe src="http://blip.tv/play/hbZ3gvC0GAI.html?p=1" width="596" height="334" frameborder="0" allowfullscreen></iframe>
+
+
+<p><embed type="application/x-shockwave-flash" src="http://a.blip.tv/api.swf#hbZ3gvC0GAI" style="display:none"></embed></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[People who can code]]></title>
+    <link href="http://martingross.github.io/articles/179/people-who-can-code"/>
+    <updated>2011-11-01T14:08:01+01:00</updated>
+    <id>http://martingross.github.io/articles/179/people-who-can-code</id>
+    <content type="html"><![CDATA[<p>bq. "People who can code in the world of technology companies are a dime a dozen and get no respect. People who can code in biology, medicine, government, sociology, physics, history, and mathematics are respected and can do amazing things to advance those disciplines."</p>
+
+<p>-- "Zed Shaw":http://learnpythonthehardway.org/book/advice.html</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[UML Notation auf einer Seite]]></title>
+    <link href="http://martingross.github.io/articles/175/uml-notation-auf-einer-seite-erklaert"/>
+    <updated>2011-02-08T11:20:40+01:00</updated>
+    <id>http://martingross.github.io/articles/175/uml-notation-auf-einer-seite-erklaert</id>
+    <content type="html"><![CDATA[<p>Eine der besten und prägnantesten Übersichten für die UML (Unified Modelling Language) habe ich bei "Wikipedia":http://de.wikipedia.org/wiki/Unified_Modeling_Language gefunden.</p>
+
+<p>!http://www.datazoo.de/images/11.png!:http://www.datazoo.de/file_download/1/UML-Diagramme.pdf</p>
+
+<p>Leider wurde es dort nur im PNG bzw. SVG Format veröffentlicht. Daher habe ich es vom Vektorformat direkt nach PDF konvertiert, das sich am besten von allen Formaten ausdrucken läßt.</p>
+
+<p>Herunterzuladen hier:</p>
+
+<p>"UML-Diagramme.pdf":http://www.datazoo.de/file_download/1/UML-Diagramme.pdf</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[17 Software Engineering Rules based on the UNIX Philosophy]]></title>
+    <link href="http://martingross.github.io/articles/169/17-software-engineering-rules-based-on-the-unix-philosophy"/>
+    <updated>2010-08-13T17:06:37+02:00</updated>
+    <id>http://martingross.github.io/articles/169/17-software-engineering-rules-based-on-the-unix-philosophy</id>
+    <content type="html"><![CDATA[<h1>Rule of Modularity: Write simple parts connected by clean interfaces.</h1>
+
+<h1>Rule of Clarity: Clarity is better than cleverness.</h1>
+
+<h1>Rule of Composition: Design programs to be connected to other programs.</h1>
+
+<h1>Rule of Separation: Separate policy from mechanism; separate interfaces from engines.</h1>
+
+<h1>Rule of Simplicity: Design for simplicity; add complexity only where you must.</h1>
+
+<h1>Rule of Parsimony: Write a big program only when it is clear by demonstration that nothing else will do.</h1>
+
+<h1>Rule of Transparency: Design for visibility to make inspection and debugging easier.</h1>
+
+<h1>Rule of Robustness: Robustness is the child of transparency and simplicity.</h1>
+
+<h1>Rule of Representation: Fold knowledge into data so program logic can be stupid and robust.</h1>
+
+<h1>Rule of Least Surprise: In interface design, always do the least surprising thing.</h1>
+
+<h1>Rule of Silence: When a program has nothing surprising to say, it should say nothing.</h1>
+
+<h1>Rule of Repair: When you must fail, fail noisily and as soon as possible.</h1>
+
+<h1>Rule of Economy: Programmer time is expensive; conserve it in preference to machine time.</h1>
+
+<h1>Rule of Generation: Avoid hand-hacking; write programs to write programs when you can.</h1>
+
+<h1>Rule of Optimization: Prototype before polishing. Get it working before you optimize it.</h1>
+
+<h1>Rule of Diversity: Distrust all claims for “one true way”.</h1>
+
+<h1>Rule of Extensibility: Design for the future, because it will be here sooner than you think.</h1>
+
+<p>From 'Basics of the Unix Philosophy': "http://www.faqs.org/docs/artu/ch01s06.html":http://www.faqs.org/docs/artu/ch01s06.html</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[git with github through a firewall]]></title>
+    <link href="http://martingross.github.io/articles/168/accessing-github-through-a-firewall"/>
+    <updated>2010-07-21T13:15:58+02:00</updated>
+    <id>http://martingross.github.io/articles/168/accessing-github-through-a-firewall</id>
+    <content type="html"><![CDATA[<p>Git supports a new, much more efficient HTTP based transport as of version 1.6.6.</p>
+
+<p>With the git's new "Smart HTTP support":http://progit.org/2010/03/04/smart-http.html it is possible to access "github":http://github.com even without ssh access.  SSH access is typically not possible from behind a corporate firewall. Though, most environments allow http through a (authenticating) proxy. With http support it is possible under these circumstances to access github, you can now push over that protocol and clone private repositories as well.</p>
+
+<p>To clone one of your repositories having push access as well, you can clone this way:</p>
+
+<p>bc. git clone https://username@github.com/username/project.git</p>
+
+<p>Be sure to use SSL (https) as git asks for your github password and sends your password unencrypted over the wire.</p>
+
+<p>For a public repository you can use:
+@git clone http://github.com/username/project.git@</p>
+
+<p>You need Git client version 1.6.6 or greater. For windows you can download it here:
+"http://code.google.com/p/msysgit/downloads/list":http://code.google.com/p/msysgit/downloads/list</p>
+
+<p>After the install be sure to set the path environment variable to the directory C:\Program Files\Git\cmd\ or whereever git is installed on your computer.</p>
+
+<p>Set both (https and http) proxy environment variables:</p>
+
+<p>bc. HTTPS_PROXY=http://user:password@proxy.firma.de:port
+HTTP_PROXY=http://user:password@proxy.firma.de:port</p>
+
+<p>I got the following error message:</p>
+
+<p>bc. error: error setting certificate verify locations:
+  CAfile: /bin/curl-ca-bundle.crt
+  CApath: none
+ while accessing https://mgross@github.com/mgross/gmailr.git/info/refs</p>
+
+<p>Which was solved by setting git config:</p>
+
+<p>@git config --global http.sslverify false@</p>
+
+<p>To push your changes to github use the following command:
+@git push origin master@</p>
+
+<p>More about 'Working with Remotes' can be found at "Pro Git":http://progit.org/book/ch2-5.html</p>
+]]></content>
+  </entry>
+  
+</feed>

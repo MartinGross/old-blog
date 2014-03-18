@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: design | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/design/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[17 Software Engineering Rules based on the UNIX Philosophy]]></title>
+    <link href="http://martingross.github.io/articles/169/17-software-engineering-rules-based-on-the-unix-philosophy"/>
+    <updated>2010-08-13T17:06:37+02:00</updated>
+    <id>http://martingross.github.io/articles/169/17-software-engineering-rules-based-on-the-unix-philosophy</id>
+    <content type="html"><![CDATA[<h1>Rule of Modularity: Write simple parts connected by clean interfaces.</h1>
+
+<h1>Rule of Clarity: Clarity is better than cleverness.</h1>
+
+<h1>Rule of Composition: Design programs to be connected to other programs.</h1>
+
+<h1>Rule of Separation: Separate policy from mechanism; separate interfaces from engines.</h1>
+
+<h1>Rule of Simplicity: Design for simplicity; add complexity only where you must.</h1>
+
+<h1>Rule of Parsimony: Write a big program only when it is clear by demonstration that nothing else will do.</h1>
+
+<h1>Rule of Transparency: Design for visibility to make inspection and debugging easier.</h1>
+
+<h1>Rule of Robustness: Robustness is the child of transparency and simplicity.</h1>
+
+<h1>Rule of Representation: Fold knowledge into data so program logic can be stupid and robust.</h1>
+
+<h1>Rule of Least Surprise: In interface design, always do the least surprising thing.</h1>
+
+<h1>Rule of Silence: When a program has nothing surprising to say, it should say nothing.</h1>
+
+<h1>Rule of Repair: When you must fail, fail noisily and as soon as possible.</h1>
+
+<h1>Rule of Economy: Programmer time is expensive; conserve it in preference to machine time.</h1>
+
+<h1>Rule of Generation: Avoid hand-hacking; write programs to write programs when you can.</h1>
+
+<h1>Rule of Optimization: Prototype before polishing. Get it working before you optimize it.</h1>
+
+<h1>Rule of Diversity: Distrust all claims for “one true way”.</h1>
+
+<h1>Rule of Extensibility: Design for the future, because it will be here sooner than you think.</h1>
+
+<p>From 'Basics of the Unix Philosophy': "http://www.faqs.org/docs/artu/ch01s06.html":http://www.faqs.org/docs/artu/ch01s06.html</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to get started designing a website]]></title>
+    <link href="http://martingross.github.io/articles/149/how-to-get-started-designing-a-website"/>
+    <updated>2010-02-05T18:20:20+01:00</updated>
+    <id>http://martingross.github.io/articles/149/how-to-get-started-designing-a-website</id>
+    <content type="html"><![CDATA[<p>h2. Layout</p>
+
+<p>Brainstorm some ideas on paper. I prefer to start just in black and white. Colors can be distracting when trying to create the "perfect" layout.</p>
+
+<p>Then use a grid system like "960 Grid System":http://960.gs/ or "Blueprint CSS":http://blueprintcss.org/ . Some call them CSS frameworks.</p>
+
+<p>h2. Colors</p>
+
+<p>Use a color generator e.g. "colorschemedesigner.com":http://colorschemedesigner.com/ and "kuler.adobe.com":http://kuler.adobe.com/ and then pick colors from the theme.</p>
+
+<p>h2. Typography</p>
+
+<p>A practical guide to web typography is: "webtypography.net":http://webtypography.net/</p>
+
+<p>Or use something like "typography.css"::http://blueprintcss.org/blueprint/src/typography.css from "Blueprint CSS":http://blueprintcss.org/</p>
+]]></content>
+  </entry>
+  
+</feed>

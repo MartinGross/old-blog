@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Java | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mocks in Java]]></title>
+    <link href="http://martingross.github.io/articles/183/mocks-in-java"/>
+    <updated>2012-09-04T12:26:17+02:00</updated>
+    <id>http://martingross.github.io/articles/183/mocks-in-java</id>
+    <content type="html"><![CDATA[<p>"Mock objects":http://en.wikipedia.org/wiki/Mock_object are simulated objects that mimic the behavior of real objects in controlled ways.</p>
+
+<p>"Mockito":http://code.google.com/p/mockito/ is my favourite mocking framework for Java for writing mock objects usable by unit tests.</p>
+
+<p>Here is an example:</p>
+
+<script src="https://gist.github.com/3619937.js?file=gistfile1.java"></script>
+
+
+<p>But sometimes you need to mock something which Mockito can't handle.</p>
+
+<p>"PowerMock":http://code.google.com/p/powermock/ is an extension to Mocking frameworks like Mockito. It extends these frameworks to mock things like static methods or constructors.</p>
+
+<p>The PowerMock website has a good page explaining "how to use PowerMock with Mockito":http://code.google.com/p/powermock/wiki/MockitoUsage13 .</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[BTrace]]></title>
+    <link href="http://martingross.github.io/articles/173/btrace"/>
+    <updated>2010-11-04T18:01:36+01:00</updated>
+    <id>http://martingross.github.io/articles/173/btrace</id>
+    <content type="html"><![CDATA[<p>You can think of BTrace as a scriptable debugger or logger: you set breakpoints and when your breakpoints are hit some script gets executed:</p>
+
+<h1>It is a dynamic tracing tool for Java.</h1>
+
+<h1>It instruments classes of a running Java program.</h1>
+
+<h1>BTrace inserts tracing actions into the classes of a running Java program.</h1>
+
+<p>This means you can inject tracing into an already running java program. No changes to the source code of your program are needed. No additional jars need to be loaded by your program.</p>
+
+<p>The scripting is done in Java and no compilation step is needed. See the example below.</p>
+
+<p>The btrace download is available "here":http://kenai.com/projects/btrace/ .</p>
+
+<p>The user guide is "here":http://kenai.com/projects/btrace/pages/UserGuide .</p>
+
+<p>h4. How to use it</p>
+
+<p>Let's assume we want to get a notification every time a thread is started.</p>
+
+<p>Now let's create the tracing script i.e. java class. Create a java class named BTraceThread.java:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="kn">import</span> <span class="nn">com.sun.btrace.annotations.</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;;</span>
+</span><span class='line'> <span class="kn">import</span> <span class="nn">static</span> <span class="n">com</span><span class="o">.</span><span class="na">sun</span><span class="o">.</span><span class="na">btrace</span><span class="o">.</span><span class="na">BTraceUtils</span><span class="o">.&lt;/</span><span class="n">em</span><span class="o">&gt;;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span> <span class="o">==</span><span class="nd">@BTrace</span><span class="o">==</span>
+</span><span class='line'> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BTraceThread</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span> <span class="c1">// ==@OnMethod annotation tells where to probe.==</span>
+</span><span class='line'> <span class="c1">// In this example, we are interested in entry </span>
+</span><span class='line'> <span class="c1">// into the Thread.start() method. </span>
+</span><span class='line'> <span class="nd">@OnMethod</span><span class="o">(</span>
+</span><span class='line'>     <span class="n">clazz</span><span class="o">=</span><span class="s">&quot;java.lang.Thread&quot;</span><span class="o">,</span>
+</span><span class='line'>     <span class="n">method</span><span class="o">=</span><span class="s">&quot;start&quot;</span>
+</span><span class='line'> <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'> <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">func</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>     <span class="c1">// println is defined in BTraceUtils</span>
+</span><span class='line'>     <span class="c1">// you can only call the static methods of BTraceUtils</span>
+</span><span class='line'>     <span class="n">println</span><span class="o">(</span><span class="s">&quot;about to start a thread!&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span> <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>If it ain't running already, start the program that shall be traced. I'll use "JRuby":http://jruby.org/ "IRB":http://docs.codehaus.org/display/JRUBY/The+JRuby+Tutorial+Part+1.5+-+Using+JIRB+to+Check+Java+Behaviour to start some threads interactively.</p>
+
+<p>We need now the pid of the IRB. Find the already running Java programms with
+@jps -l@</p>
+
+<p>Which returned on my machine:
+@17404 org.jruby.Main@</p>
+
+<p>Which means we got 17404 as the pid of our programm.</p>
+
+<p>Now run your btrace script with:
+@btrace 17404 BTraceThread.java@</p>
+
+<p>Everything is in place now. Let's start some threads using JRuby IRB:
+@t = Thread.new do puts "New thread started at #{Time.now}" end@</p>
+
+<p>Everytime a new thread starts you should see 'about to start a thread!' .</p>
+
+<pre>
+D:\>C:\Programme\Java\btrace\bin\btrace 17404 BTraceThread.java
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Maven Build without running JUnit tests]]></title>
+    <link href="http://martingross.github.io/articles/163/maven-build-without-running-junit-tests"/>
+    <updated>2010-06-21T18:47:44+02:00</updated>
+    <id>http://martingross.github.io/articles/163/maven-build-without-running-junit-tests</id>
+    <content type="html"><![CDATA[<p>If you don't want to execute the tests:</p>
+
+<p>@mvn clean install -DskipTests@</p>
+
+<p>If you want to skip compiling of the tests too:</p>
+
+<p>@mvn clean install -Dmaven.test.skip=true@</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Conditionally ignore JUnit TestCases]]></title>
+    <link href="http://martingross.github.io/articles/147/conditionally-ignore-junit-testcases"/>
+    <updated>2009-10-12T16:57:00+02:00</updated>
+    <id>http://martingross.github.io/articles/147/conditionally-ignore-junit-testcases</id>
+    <content type="html"><![CDATA[<p>@Ignore is one of the useful annotations of "JUnit 4":http://www.junit.org/ and above. If you put this in front of a test method it will be ignored and the test results show that the test was not run but ignored or skipped.</p>
+
+<p>e.g.
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.052 sec</p>
+
+<p>But sometimes you want to decide during runtime if a test should be ignored. For example if a database is not available, you don't want to run a test which depends on the database. The annotation doesn't help here. You would need to set it manually. Wrapping an if-check for the database around the method body will help you to avoid a test failure. But it will show the test passed, lulling you into a false sense of security.</p>
+
+<p>What you really want is an ignored test. That's where "Assume":http://junit.org/apidocs/org/junit/Assume.html helps:</p>
+
+<p>bq. "A set of methods useful for stating assumptions about the conditions in which a test is meaningful. A failed assumption does not mean the code is broken, but that the test provides no useful information. The default JUnit runner treats tests with failing assumptions as ignored."</p>
+
+<p>Unfortunately most of the test runners I use (Intellij Idea 7.0 and Maven 2.0.8) don't show it as ignored but as passed. Hopefully it is just a matter of time until it is fixed there as well.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JRuby]]></title>
+    <link href="http://martingross.github.io/articles/145/"/>
+    <updated>2009-09-25T19:13:04+02:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>Compiler Ruby script to a Java .class file: jruby -S jrubyc start.rb</p>
+]]></content>
+  </entry>
+  
+</feed>

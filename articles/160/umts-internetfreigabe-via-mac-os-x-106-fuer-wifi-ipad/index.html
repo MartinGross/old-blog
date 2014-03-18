@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>UMTS Internetfreigabe via Mac OS X 10.6 fÃ¼r WIFI iPad  - DATA ZOO</title>
+  <meta name="author" content="Martin Gross">
+
+  
+  <meta name="description" content="N.B. If someone is interested in an english version, leave a comment below.
+Bei Mehranschaffungskosten von 100 € nur für die UMTS / 3G Nutzung bei &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://martingross.github.io/articles/160/umts-internetfreigabe-via-mac-os-x-106-fuer-wifi-ipad">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="DATA ZOO" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-131702-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">DATA ZOO</a></h1>
+  
+    <h2>Software Business is a Jungle</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:martingross.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">UMTS Internetfreigabe via Mac OS X 10.6 FÃ¼r WIFI iPad</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-08T13:38:52+02:00" pubdate data-updated="true">Jun 8<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>N.B. If someone is interested in an english version, leave a comment below.</p>
+<p>Bei Mehranschaffungskosten von 100 € nur für die <span class="caps">UMTS</span> / 3G Nutzung bei einem iPad kann man sich schon mal überlegen, ob sich das lohnt. Hinzu kommen die Kosten für die mini <span class="caps">SIM</span>-Datenkarte plus Datentarif (z.B. 30 € pro Monat bei Vodafone). Macht also zusammen 460 € Zusatzkosten im ersten Anschaffungsjahr gegenüber einem <span class="caps">WIFI</span> (<span class="caps">WLAN</span> only) iPad. Wenn man vorhat, das iPad vornehmlich zuhause zu nutzen und dort <span class="caps">WLAN</span> hat, sieht das Kosten-Nutzen-Verhältnis daher nicht besonders gut aus.</p>
+<p>Wenn man schon eine <span class="caps">UMTS</span> Karte oder Stick für das Laptop hat, wäre es natürlich schön, wenn man diesen Internetzugang mitnutzen kann, z.B. wenn man unterwegs ist oder <span class="caps">DSL</span> mal ausgefallen ist. Internet-Sharing in <span class="caps">OSX</span> macht&#8217;s möglich.</p>
+<p>Komplizierter als gedacht, aber nach einigen Anläufen (und einer kurzen Nacht) hat es dann auch endlich geklappt. Ich konnte die <span class="caps">UMTS</span> Internetverbindung (3G) mittels Internetsharing von einem MacBook Pro auch mit dem iPad nutzen.</p>
+<p>So geht&#8217;s:</p>
+<p>1. Man stellt unter <span class="caps">OSX</span> wie gewohnt die <span class="caps">UMTS</span> Internetverbindung per <span class="caps">UMTS</span> Karte oder Stick her. Zum Beispiel über die Vodafone Mobile Broadband Applikation.</p>
+<p>2. Die Internetfreigabe anstellen: Dazu geht man in die Systemeinstellungen des Macs unter Freigaben. Dort wählt man die <span class="caps">UMTS</span> Karte unter &#8220;Verbindung freigeben:&#8221; aus. Da wir <span class="caps">WLAN</span> nutzen wollen, setzt man weiter unten das Häkchen bei Airport. In den Airport Optionen kann man noch den Schlüssel für <span class="caps">WEP</span> setzen und dem Netzwerk einen Namen (z.B. INet) geben.</p>
+<p>3. iPad konfigurieren: In den Systemeinstellungen <span class="caps">WIFI</span> wählen, Netzwerk mit dem oben gewählten Namen auswählen und gesetzten Schlüssel eingeben.</p>
+<p>Soweit noch alles Standard und wie erwartet. Und ich hoffte, dass das jetzt schon alles war. Aber von wegen. Keine Verbindung zum Internet mit dem iPad. Das iPad sieht zwar das Netz und versucht sich zu verbinden, aber es kommt keine Internetverbindung zustande. Wahrscheinlich ein <span class="caps">DHCP</span> Problem, daher mein Ansatz die IP Adressen manuell zu setzen.</p>
+<p>4. Infos zu der Internverbindung sammeln: Terminal öffnen und <code>ifconfig</code> eingeben. Dabei sollte man man nach Einträgen in der folgenden Form suchen:</p>
+<pre><code>inet xxx.xxx.xxx.xxx netmask … </code></pre>
+<p>Ich finde dazu beispielsweise:</p>
+<pre><code>ppp0: flags=8051&lt;UP,POINTOPOINT,RUNNING,MULTICAST&gt; mtu 1500
+	inet 10.225.90.69 --&gt; 10.64.64.64 netmask 0xff000000 </code></pre>
+<p>Die zweite IP Adresse nach dem Pfeil ist die relevante, also in meinem Fall 10.64.64.64 (auf einem anderen Rechner wahrscheinlich eine andere). Diese Adresse notieren und jetzt noch <code>dig</code> im Terminal eingeben.</p>
+<pre><code>;; Query time: 106 msec
+;; SERVER: 139.7.30.125#53(139.7.30.125)
+;; WHEN: Tue Jun  8 13:15:39 2010
+;; MSG SIZE  rcvd: 452</code></pre>
+<p>Die IP Adresse die hinter <span class="caps">SERVER</span> steht, ist die IP Adresse des <span class="caps">DNS</span> Servers, die wir auf dem iPad benötigen.</p>
+<p>Jetzt haben wir alle Informationen zusammen.</p>
+<p>5. Airport auf dem Mac konfigurieren: Systemeinstellungen, Netzwerk, Airport wählen. <br />
+<img src="http://www.datazoo.de/images/9.png" alt="" /></p>
+<p>Dort &#8216;weitere Optionen&#8217; und <span class="caps">TCP</span>/IP anwählen. IPv4 konfigurieren auf manuell setzen. Die oben notierte IP Adresse unter IPv4-Adresse eingeben. Teilnetzmaske auf 255.0.0.0 setzen.</p>
+<p><img src="http://www.datazoo.de/images/10.png" alt="" /></p>
+<p>Airport aktivieren, falls noch nicht der Fall.</p>
+<p>6. iPad konfigurieren: Einstellungen, <span class="caps">WIFI</span> anwählen. Netzwerknamen (z.B. in meinem Fall INet) anwählen und unterhalbe der Überschrift IP Adresse den Button &#8216;statisch&#8217; auswählen. Jetzt gibt man als IP Adresse des iPad eine freie IP Adresse an. Es bietet sich hier an die IP Adresse des Mac einfach um 1 zu erhöhen und für das iPad einzutragen, also hier 10.64.64.65 . Als Teilnetzmaske trage ich 255.255.255.0 ein. Der Router ist 10.64.64.64, also die IP Adresse vom Airport. Als <span class="caps">DNS</span> trägt man die oben durch <code>dig</code> gefundene Adresse ein, also hier 139.7.30.125 .</p>
+<p>Zurück zur <span class="caps">WIFI</span> Übersicht und damit ist man auch endlich fertig: Die Internetverbindung klappt!</p></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Martin Gross</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-08T13:38:52+02:00" pubdate data-updated="true">Jun 8<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/web/'>Web</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://martingross.github.io/articles/160/umts-internetfreigabe-via-mac-os-x-106-fuer-wifi-ipad" data-via="MartinGross" data-counturl="http://martingross.github.io/articles/160/umts-internetfreigabe-via-mac-os-x-106-fuer-wifi-ipad" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/articles/159/firebug-net-panel-explained" title="Previous Post: FireBug Net Panel Explained">&laquo; FireBug Net Panel Explained</a>
+      
+      
+        <a class="basic-alignment right" href="/articles/161/how-to-easily-sync-multiple-google-calendars-with-your-ipad" title="Next Post: How to easily sync multiple Google calendars with your iPad">How to easily sync multiple Google calendars with your iPad &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+    <img src="/images/martin_gross.jpg">
+    <h2 class="sans">Martin Gross</h2>
+    <p>Software Engineer, founder and father.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/20/action-based-vs-goal-based-doing/">Action-based vs. Goal-based Doing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/13/deconstructing-encrypted-and-signed-soap-messages-part-1/">Deconstructing encrypted and signed SOAP messages - Part 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/184/testing-web-apps-with-selenium-page-objects">Testing web apps with Selenium Page Objects</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/183/mocks-in-java">Mocks in Java</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/182/building-high-performance-development-teams">Building High Performance Development Teams</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/108643162195178029896?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2004 - 2014 - Martin Gross -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'datazoo';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://martingross.github.io/articles/160/umts-internetfreigabe-via-mac-os-x-106-fuer-wifi-ipad';
+        var disqus_url = 'http://martingross.github.io/articles/160/umts-internetfreigabe-via-mac-os-x-106-fuer-wifi-ipad';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

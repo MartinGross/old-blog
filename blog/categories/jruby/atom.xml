@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: JRuby | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/jruby/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Blog about JRuby Resources]]></title>
+    <link href="http://martingross.github.io/articles/181/blog-about-jruby-resources"/>
+    <updated>2012-04-24T14:34:35+02:00</updated>
+    <id>http://martingross.github.io/articles/181/blog-about-jruby-resources</id>
+    <content type="html"><![CDATA[<p>One week ago I started a "blog called JRuby Scout":http://jrubyscout.tumblr.com/ . I blogging there about JRuby in general and interesting JRuby resources I found.</p>
+
+<p>If you're into JRuby you might want to subscribe to the "RSS feed":http://jrubyscout.tumblr.com/rss or follow "@JRubyScout":http://www.twitter.com/JRubyScout .</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JRuby as an exceptions-as-flow-control detector]]></title>
+    <link href="http://martingross.github.io/articles/176/jruby-as-an-exceptions-as-flow-control-detector"/>
+    <updated>2011-06-18T12:40:18+02:00</updated>
+    <id>http://martingross.github.io/articles/176/jruby-as-an-exceptions-as-flow-control-detector</id>
+    <content type="html"><![CDATA[<p>Chris Heald shows in his "article 'JRuby Performance: Exceptions are not flow control'":http://www.coffeepowered.net/2011/06/17/jruby-performance-exceptions-are-not-flow-control/ how the anti-pattern of using 'exceptions as flow control' has an serious effect on the performance.</p>
+
+<p>Thanks to "headius":http://twitter.com/#!/headius logging the exceptions is as easy as:</p>
+
+<p>@jruby -Xlog.exceptions=true -Xlog.backtraces=true -Xlog.callers=true -S trinidad 2>&amp;1 | grep "Backtrace generated" -A4@</p>
+
+<p>BTW: "trinidad":https://github.com/trinidad/trinidad is used to run rails and rackup applications in an embedded Apache Tomcat</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A dirty hack to get through an authenticating proxy with open-uri]]></title>
+    <link href="http://martingross.github.io/articles/171/a-dirty-hack-to-get-through-an-authenticating-proxy-with-open-uri"/>
+    <updated>2010-09-17T14:51:53+02:00</updated>
+    <id>http://martingross.github.io/articles/171/a-dirty-hack-to-get-through-an-authenticating-proxy-with-open-uri</id>
+    <content type="html"><![CDATA[<p>I had problems parsing a webpage with Nokogiri on JRuby 1.5.2 . The proxy authentication was the issue.</p>
+
+<p>Here is how I solved this issue:</p>
+
+<p>Set your environment variable HTTP_PROXY with your proxy data (user, password, URL, port) e.g.</p>
+
+<p>bc. HTTP_PROXY=http://prxuser:prxpasswd@prx-server:8080</p>
+
+<p>Then change in lib\ruby\1.8\open-uri.rb, line 216, from:</p>
+
+<p>@klass = Net::HTTP::Proxy(proxy.host, proxy.port)@</p>
+
+<p>to:</p>
+
+<p>@klass = Net::HTTP::Proxy(proxy.host, proxy.port, proxy.user, proxy.password)@</p>
+
+<p>And test it with:</p>
+
+<p>bc. require 'rubygems'
+require 'nokogiri'
+require 'open-uri'
+html_doc = Nokogiri::HTML(open("http://www.google.com/search?hl=de&amp;q=software"))
+html_doc.css('h3>a').each do |node|
+  puts node.text
+end</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby and JRuby people worth following]]></title>
+    <link href="http://martingross.github.io/articles/154/ruby-and-jruby-people-worth-following"/>
+    <updated>2010-03-29T19:43:28+02:00</updated>
+    <id>http://martingross.github.io/articles/154/ruby-and-jruby-people-worth-following</id>
+    <content type="html"><![CDATA[<p>Just created a twitter list of Ruby and JRuby people worth following, with an emphasis on JRuby: "@MartinGross/jruby":http://twitter.com/MartinGross/jruby</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JRuby]]></title>
+    <link href="http://martingross.github.io/articles/145/"/>
+    <updated>2009-09-25T19:13:04+02:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>Compiler Ruby script to a Java .class file: jruby -S jrubyc start.rb</p>
+]]></content>
+  </entry>
+  
+</feed>

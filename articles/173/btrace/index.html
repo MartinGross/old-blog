@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>BTrace - DATA ZOO</title>
+  <meta name="author" content="Martin Gross">
+
+  
+  <meta name="description" content="You can think of BTrace as a scriptable debugger or logger: you set breakpoints and when your breakpoints are hit some script gets executed: It is a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://martingross.github.io/articles/173/btrace">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="DATA ZOO" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-131702-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">DATA ZOO</a></h1>
+  
+    <h2>Software Business is a Jungle</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:martingross.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">BTrace</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-04T18:01:36+01:00" pubdate data-updated="true">Nov 4<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>You can think of BTrace as a scriptable debugger or logger: you set breakpoints and when your breakpoints are hit some script gets executed:</p>
+<ol>
+	<li>It is a dynamic tracing tool for Java.</li>
+	<li>It instruments classes of a running Java program.</li>
+	<li>BTrace inserts tracing actions into the classes of a running Java program.</li>
+</ol>
+<p>This means you can inject tracing into an already running java program. No changes to the source code of your program are needed. No additional jars need to be loaded by your program.</p>
+<p>The scripting is done in Java and no compilation step is needed. See the example below.</p>
+<p>The btrace download is available <a href="http://kenai.com/projects/btrace/">here</a> .</p>
+<p>The user guide is <a href="http://kenai.com/projects/btrace/pages/UserGuide">here</a> .</p>
+<h4>How to use it</h4>
+<p>Let&#8217;s assume we want to get a notification every time a thread is started.</p>
+<p>Now let&#8217;s create the tracing script i.e. java class. Create a java class named BTraceThread.java:</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="kn">import</span> <span class="nn">com.sun.btrace.annotations.*</span><span class="o">;</span>
+</span><span class='line'> <span class="kn">import</span> <span class="nn">static</span> <span class="n">com</span><span class="o">.</span><span class="na">sun</span><span class="o">.</span><span class="na">btrace</span><span class="o">.</span><span class="na">BTraceUtils</span><span class="o">.*;</span>
+</span><span class='line'>
+</span><span class='line'> <span class="o">==</span><span class="nd">@BTrace</span><span class="o">==</span>
+</span><span class='line'> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BTraceThread</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>     <span class="c1">// ==@OnMethod annotation tells where to probe.==</span>
+</span><span class='line'>     <span class="c1">// In this example, we are interested in entry </span>
+</span><span class='line'>     <span class="c1">// into the Thread.start() method. </span>
+</span><span class='line'>     <span class="nd">@OnMethod</span><span class="o">(</span>
+</span><span class='line'>         <span class="n">clazz</span><span class="o">=</span><span class="s">&quot;java.lang.Thread&quot;</span><span class="o">,</span>
+</span><span class='line'>         <span class="n">method</span><span class="o">=</span><span class="s">&quot;start&quot;</span>
+</span><span class='line'>     <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">func</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>         <span class="c1">// println is defined in BTraceUtils</span>
+</span><span class='line'>         <span class="c1">// you can only call the static methods of BTraceUtils</span>
+</span><span class='line'>         <span class="n">println</span><span class="o">(</span><span class="s">&quot;about to start a thread!&quot;</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'> <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>If it ain&#8217;t running already, start the program that shall be traced. I&#8217;ll use <a href="http://jruby.org/">JRuby</a> <a href="http://docs.codehaus.org/display/JRUBY/The+JRuby+Tutorial+Part+1.5+-+Using+JIRB+to+Check+Java+Behaviour"><span class="caps">IRB</span></a> to start some threads interactively.</p>
+<p>We need now the pid of the <span class="caps">IRB</span>. Find the already running Java programms with <br />
+<code>jps -l</code></p>
+<p>Which returned on my machine:<br />
+<code>17404 org.jruby.Main</code></p>
+<p>Which means we got 17404 as the pid of our programm.</p>
+<p>Now run your btrace script with:<br />
+<code>btrace 17404 BTraceThread.java</code></p>
+<p>Everything is in place now. Let&#8217;s start some threads using JRuby <span class="caps">IRB</span>:<br />
+<code>t = Thread.new do puts "New thread started at #{Time.now}" end</code></p>
+<p>Everytime a new thread starts you should see &#8216;about to start a thread!&#8217; .</p>
+<pre>
+D:\&gt;C:\Programme\Java\btrace\bin\btrace 17404 BTraceThread.java
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+</pre></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Martin Gross</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-04T18:01:36+01:00" pubdate data-updated="true">Nov 4<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/java/'>Java</a>, <a class='category' href='/blog/categories/performance-testing/'>performance-testing</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://martingross.github.io/articles/173/btrace" data-via="MartinGross" data-counturl="http://martingross.github.io/articles/173/btrace" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/articles/172/performance-testing-quick-tip-handling-very-large-log-files" title="Previous Post: Performance Testing: Quick Tip: Handling very large log files">&laquo; Performance Testing: Quick Tip: Handling very large log files</a>
+      
+      
+        <a class="basic-alignment right" href="/articles/175/uml-notation-auf-einer-seite-erklaert" title="Next Post: UML Notation auf einer Seite">UML Notation auf einer Seite &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+    <img src="/images/martin_gross.jpg">
+    <h2 class="sans">Martin Gross</h2>
+    <p>Software Engineer, founder and father.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/20/action-based-vs-goal-based-doing/">Action-based vs. Goal-based Doing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/13/deconstructing-encrypted-and-signed-soap-messages-part-1/">Deconstructing encrypted and signed SOAP messages - Part 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/184/testing-web-apps-with-selenium-page-objects">Testing web apps with Selenium Page Objects</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/183/mocks-in-java">Mocks in Java</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/182/building-high-performance-development-teams">Building High Performance Development Teams</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/108643162195178029896?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2004 - 2014 - Martin Gross -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'datazoo';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://martingross.github.io/articles/173/btrace';
+        var disqus_url = 'http://martingross.github.io/articles/173/btrace';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

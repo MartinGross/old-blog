@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Projekt-Management | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/projekt-management/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Building High Performance Development Teams]]></title>
+    <link href="http://martingross.github.io/articles/182/building-high-performance-development-teams"/>
+    <updated>2012-08-08T10:35:22+02:00</updated>
+    <id>http://martingross.github.io/articles/182/building-high-performance-development-teams</id>
+    <content type="html"><![CDATA[<iframe src="http://blip.tv/play/hbZ3gvC0GAI.html?p=1" width="596" height="334" frameborder="0" allowfullscreen></iframe>
+
+
+<p><embed type="application/x-shockwave-flash" src="http://a.blip.tv/api.swf#hbZ3gvC0GAI" style="display:none"></embed></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Oft untersch&#228;tzter Aufwand f&#252;r Projektmanagement]]></title>
+    <link href="http://martingross.github.io/articles/90/"/>
+    <updated>2006-08-02T16:17:41+02:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>Es ist immer wieder für mich erstaunlich, wieviel Zeit man für Projektmanagement benötigt. Man neigt einfach dazu, das stark zu unterschätzen. Aus eigener Erfahrung weiss ich, dass es nahezu unmöglich ist, an einem Projekt selbst inhaltlich mitzuarbeiten, wenn man dafür das Projektmanagement macht. Auch wenn es einem in den Fingern juckt, man sollte sich selbst nicht als aktive Arbeitskraft einplanen. Wenn dann doch etwas Zeit dafür bleibt, obwohl es nicht eingeplant war, umso besser. Aber es passieren in den meisten Fällen einfach zu viele ungeplante Dinge für die man Zeitreserven vorhalten sollte.</p>
+
+<p>Der Aufwand für das Projektmanagement steigt mit der Anzahl der beteiligten Personen stark an. Man ist Ansprechpartner für den Kunden, für die Projektmitarbeiter, für andere Projekte und natürlich das Controlling/Abteilungsleiter/Geschäftsführung, je nach Größe des Unternehmens in dem man arbeitet. Der Hauptteil der Arbeit ist Kommunikation und darauf zu achten, dass jeder "on track" bleibt.</p>
+
+<p>Ein kleines Projekt mit 2 Mitarbeitern lässt sich noch "nebenher" managen. Ab 5 Personen ist es nahezu unmöglich, das nicht als Vollzeit-Job zu tun. Gerade im Softwarebereich hat man oft mit Unwägbarkeiten zu tun, für die man schnell Lösungen finden muss, damit die Mitarbeiter nicht ausgebremst werden. Kann man sich dann wegen anderer Verpflichtungen nicht darum kümmern, gerät schnell das ganze Projekt in Verzug.</p>
+
+<p>Die Schätzung von Aufwänden gehört wahrscheinlich zu den meistgehassten Tätigkeiten eines Projektmanagers. Man begibt sich immer auf dünnes Eis, da man selten ausreichend Erfahrungswerte für diesen speziellen Typ von Projekt hat. Liegt man mit seinen Schätzungen unter dem tatsächlichen Aufwand ist das Projekt schnell unrentabel. Kalkuliert man den Aufwand hoch, bekommt man oft nicht den Auftrag vom Kunden. Eine echte Zwickmühle. Der Aufwand den Projektaufwand zu schätzen ist auch recht hoch, da man sehr viele Informationen einholen und prüfen muss.</p>
+
+<p>Einen guten Artikel wie man seine Schätzungen absichert, findet man von "Tom Mochal bei TechRepublic":http://articles.techrepublic.com.com/5100-10878_11-6100412.html</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Projektplanung f&#252;r Software-Projekte]]></title>
+    <link href="http://martingross.github.io/articles/68/"/>
+    <updated>2005-09-21T18:30:16+02:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>Joel hat schon vor längerer Zeit einen hervorragenden "Artikel":http://www.joelonsoftware.com/articles/fog0000000245.html zu Zeitschätzung von Software-Projekten geschrieben. Verblüffend ist der einfache, aber effiziente Ansatz.</p>
+]]></content>
+  </entry>
+  
+</feed>

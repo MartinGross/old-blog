@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Usability | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/usability/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mind Mapping]]></title>
+    <link href="http://martingross.github.io/articles/157/mind-mapping"/>
+    <updated>2010-04-21T17:18:49+02:00</updated>
+    <id>http://martingross.github.io/articles/157/mind-mapping</id>
+    <content type="html"><![CDATA[<p>"FreeMind":http://freemind.sourceforge.net/wiki/index.php/Main_Page ist meiner Meinung eines der besten Mind Mapping Tools. Es läuft auf allen wichtigen Betriebssystemen, exportiert PDF und SVG, ist OpenSource.</p>
+
+<p>Und macht vor allem nicht zuviel und nicht zu wenig: Gerade beim Mind Mapping möchte ich mich nicht von meinen eigentlichen Gedanken durch die Bedienung der Software ablenken lassen.</p>
+
+<p>!http://www.datazoo.de/images/5.png!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bash Prompt einstellen]]></title>
+    <link href="http://martingross.github.io/articles/116/"/>
+    <updated>2008-02-29T14:44:00+01:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>Beispiel:</p>
+
+<p>Durch Eingabe von</p>
+
+<p><code>export PS1='\u@\h:\w>'</code></p>
+
+<p>erhÃ¤lt man folgenden Prompt</p>
+
+<p><code>user1@test01:~></code></p>
+
+<p>Mehr dazu: "Tip: Prompt magic":http://www.ibm.com/developerworks/library/l-tip-prompt/index.html</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Studie: Benutzerfreundlichkeit ist der Schl&#252;ssel zum Erfolg]]></title>
+    <link href="http://martingross.github.io/articles/33/"/>
+    <updated>2004-06-16T04:34:43+02:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>Eigentlich kam nichts Überraschendes bei einer Studie des Fraunhofer-Instituts für Arbeitswirtschaft und Organisation (IAO) heraus. Aber trotzdem ist es doch immer wieder wichtig, darauf hinzuweisen:</p>
+
+<p>bq. Auf die Frage "Was erwarten Sie von einer guten Technologie?" nannten die Befragten Stabilität und Benutzerfreundlichkeit als die wesentlichen Punkte. "Das sind die beiden wichtigsten Akzeptanzfaktoren für neue Technologien", so Arbeitswissenschaftler Greisle. Weit abgeschlagen werden Design und persönlicher Imagegewinn genannt. Für Greisle sind die Aussagen von besonderer Bedeutung, betreffen sie doch die Hausaufgaben der Hersteller: "Nicht auf ein tolles Design und nicht auf überflüssige Funktionen kommt es an. Die Anwender wollen stabile und benutzerfreundliche Lösungen."</p>
+
+<p>bq. Bei der Frage nach Verbesserungspotentialen führen ebenfalls mit großem Abstand Stabilität und Benutzerfreundlichkeit. Das sollte zum Nachdenken anregen, weil die Anwender genau in den Punkten Verbesserungen fordern. Wollen Hersteller und Unternehmen die Akzeptanz für Produkte und Lösungen fördern, so liegen aus Anwendersicht hier die wesentlichen Punkte. Hersteller und Leute, die Technologien in Unternehmen einführen, sollten darauf achten, dass Stabilität und Benutzerfreundlichkeit vorhanden sind, rät der Fraunhofer-Mann. Wer das schafft, habe einen ganz wichtigen Schritt in Richtung Akzeptanz gemacht, meint Greisle.</p>
+
+<p>Gefunden bei "silicon.de":http://www.silicon.de/cpo/ts-cio/detail.php?nr=15053&amp;directory=ts-cio</p>
+]]></content>
+  </entry>
+  
+</feed>

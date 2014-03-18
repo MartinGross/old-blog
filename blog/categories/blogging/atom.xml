@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Blogging | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/blogging/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Blog about JRuby Resources]]></title>
+    <link href="http://martingross.github.io/articles/181/blog-about-jruby-resources"/>
+    <updated>2012-04-24T14:34:35+02:00</updated>
+    <id>http://martingross.github.io/articles/181/blog-about-jruby-resources</id>
+    <content type="html"><![CDATA[<p>One week ago I started a "blog called JRuby Scout":http://jrubyscout.tumblr.com/ . I blogging there about JRuby in general and interesting JRuby resources I found.</p>
+
+<p>If you're into JRuby you might want to subscribe to the "RSS feed":http://jrubyscout.tumblr.com/rss or follow "@JRubyScout":http://www.twitter.com/JRubyScout .</p>
+]]></content>
+  </entry>
+  
+</feed>

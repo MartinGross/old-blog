@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[DATA ZOO]]></title>
+  <link href="http://martingross.github.io/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Action-based vs. Goal-based Doing]]></title>
+    <link href="http://martingross.github.io/blog/2013/04/20/action-based-vs-goal-based-doing/"/>
+    <updated>2013-04-20T21:58:00+02:00</updated>
+    <id>http://martingross.github.io/blog/2013/04/20/action-based-vs-goal-based-doing</id>
+    <content type="html"><![CDATA[<p>If you follow the &#8216;Getting Things Done&#8217; approach you know the to do lists that detail all the actions. Actions you wrote down. Actions you are supposed to do to achieve the completion of your projects.</p>
+
+<p>The problem with action based to do lists is that they just tell you the action you should do.</p>
+
+<p>When looking at them you don&#8217;t start thinking about</p>
+
+<ul>
+<li>the goal</li>
+<li>is it really required</li>
+<li>is there another, smarter or faster way to do it</li>
+<li>can you delegate it</li>
+<li>how could you save some time doing it in a different way</li>
+</ul>
+
+
+<!-- more -->
+
+
+<p>Sometimes it is better to write down a goal you want to achieve. Not how to do it. This gives you options how to achieve that goal. It doesn&#8217;t force you execute an action but gives the opportunity to find creative solutions.</p>
+
+<p>It let&#8217;s you find shortcuts instead of stupidly just doing something. And it motivates because you know what will be the outcome.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Deconstructing encrypted and signed SOAP messages - Part 1]]></title>
+    <link href="http://martingross.github.io/blog/2013/04/13/deconstructing-encrypted-and-signed-soap-messages-part-1/"/>
+    <updated>2013-04-13T22:31:00+02:00</updated>
+    <id>http://martingross.github.io/blog/2013/04/13/deconstructing-encrypted-and-signed-soap-messages-part-1</id>
+    <content type="html"><![CDATA[<p>Ever wondered how an encrypted and signed SOAP request looks alike?</p>
+
+<p>I saw quite a lot of them at work when I analyzed security compatibility issues between .NET clients and Java Webservices with Apache Axis2.</p>
+
+<p>Here is a real request but with sensitive data removed:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:wsa=</span><span class="s">&quot;http://www.w3.org/2005/08/addressing&quot;</span> <span class="na">xmlns:xenc=</span><span class="s">&quot;http://www.w3.org/2001/04/xmlenc#&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;soapenv:Header&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;wsse:Security</span> <span class="na">xmlns:wsse=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;</span> <span class="na">soapenv:mustUnderstand=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;xenc:EncryptedKey</span> <span class="na">Id=</span><span class="s">&quot;EncKeyId-urn:uuid:07B356A4F98142A54513613288059762&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;xenc:EncryptionMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2001/04/xmlenc#rsa-1_5&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;ds:KeyInfo</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;wsse:SecurityTokenReference&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;wsse:KeyIdentifier</span> <span class="na">EncodingType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;</span> <span class="na">ValueType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509SubjectKeyIdentifier&quot;</span><span class="nt">&gt;</span>aU53M6ufa/yIi/8Cf0SYnDqFNxg=<span class="nt">&lt;/wsse:KeyIdentifier&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;/wsse:SecurityTokenReference&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/ds:KeyInfo&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;xenc:CipherData&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;xenc:CipherValue&gt;</span>rCW...tms=<span class="nt">&lt;/xenc:CipherValue&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/xenc:CipherData&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;xenc:ReferenceList&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;xenc:DataReference</span> <span class="na">URI=</span><span class="s">&quot;#EncDataId-917483082&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/xenc:ReferenceList&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/xenc:EncryptedKey&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;wsse:BinarySecurityToken</span> <span class="na">xmlns:wsu=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;</span> <span class="na">EncodingType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;</span> <span class="na">ValueType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3&quot;</span> <span class="na">wsu:Id=</span><span class="s">&quot;CertId-11497308&quot;</span><span class="nt">&gt;</span>MII...3za<span class="nt">&lt;/wsse:BinarySecurityToken&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;ds:Signature</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span> <span class="na">Id=</span><span class="s">&quot;Signature-2113162951&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;ds:SignedInfo&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;ds:CanonicalizationMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;ds:SignatureMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#rsa-sha1&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;ds:Reference</span> <span class="na">URI=</span><span class="s">&quot;#id-917483082&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;ds:Transforms&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;ds:Transform</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;/ds:Transforms&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;ds:DigestMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;ds:DigestValue&gt;</span>mjnRJrB+7XLz3lQiAJ1doc17OJw=<span class="nt">&lt;/ds:DigestValue&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;/ds:Reference&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/ds:SignedInfo&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;ds:SignatureValue&gt;</span>H2e...h7uH1STc/o=<span class="nt">&lt;/ds:SignatureValue&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;ds:KeyInfo</span> <span class="na">Id=</span><span class="s">&quot;KeyId-1203935139&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;wsse:SecurityTokenReference</span> <span class="na">xmlns:wsu=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;</span> <span class="na">wsu:Id=</span><span class="s">&quot;STRId-540941256&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;wsse:Reference</span> <span class="na">URI=</span><span class="s">&quot;#CertId-11497308&quot;</span> <span class="na">ValueType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;/wsse:SecurityTokenReference&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/ds:KeyInfo&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/ds:Signature&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/wsse:Security&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;wsa:To&gt;</span>http://cool.sys.com/services/WebService_v0.3<span class="nt">&lt;/wsa:To&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;wsa:MessageID&gt;</span>urn:uuid:C63E757221CBA561F61361328805225<span class="nt">&lt;/wsa:MessageID&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;wsa:Action&gt;</span>urn:processdata<span class="nt">&lt;/wsa:Action&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/soapenv:Header&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;soapenv:Body</span> <span class="na">xmlns:wsu=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;</span> <span class="na">wsu:Id=</span><span class="s">&quot;id-917483082&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;xenc:EncryptedData</span> <span class="na">Id=</span><span class="s">&quot;EncDataId-917483082&quot;</span> <span class="na">Type=</span><span class="s">&quot;http://www.w3.org/2001/04/xmlenc#Content&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;xenc:EncryptionMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2001/04/xmlenc#aes128-cbc&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;ds:KeyInfo</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;wsse:SecurityTokenReference</span> <span class="na">xmlns:wsse=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;wsse:Reference</span> <span class="na">URI=</span><span class="s">&quot;#EncKeyId-urn:uuid:07B356A4F98142A54513613288059762&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/wsse:SecurityTokenReference&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/ds:KeyInfo&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;xenc:CipherData&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;xenc:CipherValue&gt;</span>PNpIO59dbpT...MlYAynP3p7wRxf9YItPQ==<span class="nt">&lt;/xenc:CipherValue&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/xenc:CipherData&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/xenc:EncryptedData&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/soapenv:Body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Looks quite complicated but if you understand the basics it will get easier. Most of this is defined by the WS-Security standard. http://www2.sys-con.com/itsg/virtualcd/dotnet/archives/0105/bristowe/index.html</p>
+
+<p>Let&#8217;s have a look at the structure. For the moment I will ignore namespaces to keep things short and simple.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Testing web apps with Selenium Page Objects]]></title>
+    <link href="http://martingross.github.io/articles/184/testing-web-apps-with-selenium-page-objects"/>
+    <updated>2012-09-04T17:59:56+02:00</updated>
+    <id>http://martingross.github.io/articles/184/testing-web-apps-with-selenium-page-objects</id>
+    <content type="html"><![CDATA[<p>Why?</p>
+<p>During the process of developing a web application, the structure of web pages often changes. If you have several <a href="http://code.google.com/p/selenium/">Selenium</a> tests that test different functionalities of one page, you don&#8217;t want to change all your tests if the page changes only its layout.</p>
+<p>Let say you have twelve tests which access the page. Now you need to change the page to display an additional table row. Your selenium test would probably fail, because the expected data is now at a different place on the page.</p>
+<p>The solution: Use abstractions!</p>
+<p>Your tests should not access the page structure itself but use abstractions of the page. This means you would only need to adapt the abstraction of the page and the twelve tests wouldn&#8217;t need any modification.</p>
+<p><a href="http://code.google.com/p/selenium/wiki/PageObjects">Page objects</a> should be the only thing that have a deep knowledge of the structure of the <span class="caps">HTML</span> of a page. Think of the methods on a Page Object as offering the &#8220;services&#8221; that a page offers rather than exposing the <span class="caps">HTML</span> strucure of the web page.</p>
+<p>From the <a href="http://code.google.com/p/selenium/wiki/PageObjects">Page objects</a> page:<br />
+<cite>As an example, think of the inbox of any web-based email system. Amongst the services that it offers are typically the ability to compose a new email, to choose to read a single email, and to list the subject lines of the emails in the inbox. How these are implemented shouldn&#8217;t matter to the test.</cite></p>
+<p>If your programming in Ruby you might want to use <a href="https://github.com/cheezy/page-object">page-object</a> . page-object is a <a href="http://www.cheezyworld.com/2011/07/29/introducing-page-object-gem/">simple ruby gem that assists in creating flexible page objects</a> for testing browser based applications.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mocks in Java]]></title>
+    <link href="http://martingross.github.io/articles/183/mocks-in-java"/>
+    <updated>2012-09-04T12:26:17+02:00</updated>
+    <id>http://martingross.github.io/articles/183/mocks-in-java</id>
+    <content type="html"><![CDATA[<p><a href="http://en.wikipedia.org/wiki/Mock_object">Mock objects</a> are simulated objects that mimic the behavior of real objects in controlled ways.</p>
+<p><a href="http://code.google.com/p/mockito/">Mockito</a> is my favourite mocking framework for Java for writing mock objects usable by unit tests.</p>
+<p>Here is an example:<br />
+<script src="https://gist.github.com/3619937.js?file=gistfile1.java"></script></p>
+<p>But sometimes you need to mock something which Mockito can&#8217;t handle.</p>
+<p><a href="http://code.google.com/p/powermock/">PowerMock</a> is an extension to Mocking frameworks like Mockito. It extends these frameworks to mock things like static methods or constructors.</p>
+<p>The PowerMock website has a good page explaining <a href="http://code.google.com/p/powermock/wiki/MockitoUsage13">how to use PowerMock with Mockito</a> .</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Building High Performance Development Teams]]></title>
+    <link href="http://martingross.github.io/articles/182/building-high-performance-development-teams"/>
+    <updated>2012-08-08T10:35:22+02:00</updated>
+    <id>http://martingross.github.io/articles/182/building-high-performance-development-teams</id>
+    <content type="html"><![CDATA[<p><iframe src="http://blip.tv/play/hbZ3gvC0GAI.html?p=1" width="596" height="334" frameborder="0" allowfullscreen></iframe><embed type="application/x-shockwave-flash" src="http://a.blip.tv/api.swf#hbZ3gvC0GAI" style="display:none"></embed></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Blog about JRuby Resources]]></title>
+    <link href="http://martingross.github.io/articles/181/blog-about-jruby-resources"/>
+    <updated>2012-04-24T14:34:35+02:00</updated>
+    <id>http://martingross.github.io/articles/181/blog-about-jruby-resources</id>
+    <content type="html"><![CDATA[<p>One week ago I started a <a href="http://jrubyscout.tumblr.com/">blog called JRuby Scout</a> . I blogging there about JRuby in general and interesting JRuby resources I found.</p>
+<p>If you&#8217;re into JRuby you might want to subscribe to the <a href="http://jrubyscout.tumblr.com/rss"><span class="caps">RSS</span> feed</a> or follow <a href="http://www.twitter.com/JRubyScout">@JRubyScout</a> .</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5: Sectioning content elements ]]></title>
+    <link href="http://martingross.github.io/articles/180/html5-sectioning-content-elements"/>
+    <updated>2012-04-24T13:30:06+02:00</updated>
+    <id>http://martingross.github.io/articles/180/html5-sectioning-content-elements</id>
+    <content type="html"><![CDATA[<p><a href="http://html5doctor.com/">html5doctor</a> has a good flowchart leading you to the right content elements in HTML5:</p>
+<p><a href="http://html5doctor.com/downloads/h5d-sectioning-flowchart.png"><img src="http://html5doctor.com/downloads/h5d-sectioning-flowchart.sml.png" alt="" /></a></p>
+<p><a href="http://html5doctor.com/downloads/h5d-sectioning-flowchart.pdf">Also available as a <span class="caps">PDF</span> download</a></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[People who can code]]></title>
+    <link href="http://martingross.github.io/articles/179/people-who-can-code"/>
+    <updated>2011-11-01T14:08:01+01:00</updated>
+    <id>http://martingross.github.io/articles/179/people-who-can-code</id>
+    <content type="html"><![CDATA[<blockquote>
+<p>&#8220;People who can code in the world of technology companies are a dime a dozen and get no respect. People who can code in biology, medicine, government, sociology, physics, history, and mathematics are respected and can do amazing things to advance those disciplines.&#8221;</p>
+</blockquote>
+<p>&#8212; <a href="http://learnpythonthehardway.org/book/advice.html">Zed Shaw</a></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gegenwart]]></title>
+    <link href="http://martingross.github.io/articles/178/gegenwart"/>
+    <updated>2011-06-25T16:08:42+02:00</updated>
+    <id>http://martingross.github.io/articles/178/gegenwart</id>
+    <content type="html"><![CDATA[<blockquote>
+<p>&#8220;Nur wenige leben in der Gegenwart; die meisten bereiten sich darauf vor, demnächst zu leben.&#8221; Jonathan Swift</p>
+</blockquote>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why does Test Driven Development matter?]]></title>
+    <link href="http://martingross.github.io/articles/177/tdd"/>
+    <updated>2011-06-18T13:50:18+02:00</updated>
+    <id>http://martingross.github.io/articles/177/tdd</id>
+    <content type="html"><![CDATA[<p>An excellent Talk by Robert Martin called &#8220;What Killed Smalltalk Could Kill Ruby, Too&#8221; that shows why test driven development (<span class="caps">TDD</span>) as a concept is so important, not only for Ruby projects but for every software project.</p>
+<p>The <span class="caps">TDD</span> relevant part starts at <a href="http://youtu.be/YX3iRjKj7C0?t=23m56s">23m 56s</a> .</p>
+<p><iframe width="560" height="349" src="http://www.youtube.com/embed/YX3iRjKj7C0" frameborder="0" allowfullscreen></iframe></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JRuby as an exceptions-as-flow-control detector]]></title>
+    <link href="http://martingross.github.io/articles/176/jruby-as-an-exceptions-as-flow-control-detector"/>
+    <updated>2011-06-18T12:40:18+02:00</updated>
+    <id>http://martingross.github.io/articles/176/jruby-as-an-exceptions-as-flow-control-detector</id>
+    <content type="html"><![CDATA[<p>Chris Heald shows in his <a href="http://www.coffeepowered.net/2011/06/17/jruby-performance-exceptions-are-not-flow-control/">article &#8216;JRuby Performance: Exceptions are not flow control&#8217;</a> how the anti-pattern of using &#8216;exceptions as flow control&#8217; has an serious effect on the performance.</p>
+<p>Thanks to <a href="http://twitter.com/#!/headius">headius</a> logging the exceptions is as easy as:</p>
+<p><code>jruby -Xlog.exceptions=true -Xlog.backtraces=true -Xlog.callers=true -S trinidad 2&gt;&amp;1 | grep "Backtrace generated" -A4</code></p>
+<p><span class="caps">BTW</span>: <a href="https://github.com/trinidad/trinidad">trinidad</a> is used to run rails and rackup applications in an embedded Apache Tomcat</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[UML Notation auf einer Seite]]></title>
+    <link href="http://martingross.github.io/articles/175/uml-notation-auf-einer-seite-erklaert"/>
+    <updated>2011-02-08T11:20:40+01:00</updated>
+    <id>http://martingross.github.io/articles/175/uml-notation-auf-einer-seite-erklaert</id>
+    <content type="html"><![CDATA[<p>Eine der besten und prägnantesten Übersichten für die <span class="caps">UML</span> (Unified Modelling Language) habe ich bei <a href="http://de.wikipedia.org/wiki/Unified_Modeling_Language">Wikipedia</a> gefunden.</p>
+<p><a href="http://www.datazoo.de/file_download/1/UML-Diagramme.pdf"><img src="http://www.datazoo.de/images/11.png" alt="" /></a></p>
+<p>Leider wurde es dort nur im <span class="caps">PNG</span> bzw. <span class="caps">SVG</span> Format veröffentlicht. Daher habe ich es vom Vektorformat direkt nach <span class="caps">PDF</span> konvertiert, das sich am besten von allen Formaten ausdrucken läßt.</p>
+<p>Herunterzuladen hier:</p>
+<p><a href="http://www.datazoo.de/file_download/1/UML-Diagramme.pdf"><span class="caps">UML</span>-Diagramme.pdf</a></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[BTrace]]></title>
+    <link href="http://martingross.github.io/articles/173/btrace"/>
+    <updated>2010-11-04T18:01:36+01:00</updated>
+    <id>http://martingross.github.io/articles/173/btrace</id>
+    <content type="html"><![CDATA[<p>You can think of BTrace as a scriptable debugger or logger: you set breakpoints and when your breakpoints are hit some script gets executed:</p>
+<ol>
+	<li>It is a dynamic tracing tool for Java.</li>
+	<li>It instruments classes of a running Java program.</li>
+	<li>BTrace inserts tracing actions into the classes of a running Java program.</li>
+</ol>
+<p>This means you can inject tracing into an already running java program. No changes to the source code of your program are needed. No additional jars need to be loaded by your program.</p>
+<p>The scripting is done in Java and no compilation step is needed. See the example below.</p>
+<p>The btrace download is available <a href="http://kenai.com/projects/btrace/">here</a> .</p>
+<p>The user guide is <a href="http://kenai.com/projects/btrace/pages/UserGuide">here</a> .</p>
+<h4>How to use it</h4>
+<p>Let&#8217;s assume we want to get a notification every time a thread is started.</p>
+<p>Now let&#8217;s create the tracing script i.e. java class. Create a java class named BTraceThread.java:</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="kn">import</span> <span class="nn">com.sun.btrace.annotations.*</span><span class="o">;</span>
+</span><span class='line'> <span class="kn">import</span> <span class="nn">static</span> <span class="n">com</span><span class="o">.</span><span class="na">sun</span><span class="o">.</span><span class="na">btrace</span><span class="o">.</span><span class="na">BTraceUtils</span><span class="o">.*;</span>
+</span><span class='line'>
+</span><span class='line'> <span class="o">==</span><span class="nd">@BTrace</span><span class="o">==</span>
+</span><span class='line'> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BTraceThread</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>     <span class="c1">// ==@OnMethod annotation tells where to probe.==</span>
+</span><span class='line'>     <span class="c1">// In this example, we are interested in entry </span>
+</span><span class='line'>     <span class="c1">// into the Thread.start() method. </span>
+</span><span class='line'>     <span class="nd">@OnMethod</span><span class="o">(</span>
+</span><span class='line'>         <span class="n">clazz</span><span class="o">=</span><span class="s">&quot;java.lang.Thread&quot;</span><span class="o">,</span>
+</span><span class='line'>         <span class="n">method</span><span class="o">=</span><span class="s">&quot;start&quot;</span>
+</span><span class='line'>     <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">func</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>         <span class="c1">// println is defined in BTraceUtils</span>
+</span><span class='line'>         <span class="c1">// you can only call the static methods of BTraceUtils</span>
+</span><span class='line'>         <span class="n">println</span><span class="o">(</span><span class="s">&quot;about to start a thread!&quot;</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'> <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>If it ain&#8217;t running already, start the program that shall be traced. I&#8217;ll use <a href="http://jruby.org/">JRuby</a> <a href="http://docs.codehaus.org/display/JRUBY/The+JRuby+Tutorial+Part+1.5+-+Using+JIRB+to+Check+Java+Behaviour"><span class="caps">IRB</span></a> to start some threads interactively.</p>
+<p>We need now the pid of the <span class="caps">IRB</span>. Find the already running Java programms with <br />
+<code>jps -l</code></p>
+<p>Which returned on my machine:<br />
+<code>17404 org.jruby.Main</code></p>
+<p>Which means we got 17404 as the pid of our programm.</p>
+<p>Now run your btrace script with:<br />
+<code>btrace 17404 BTraceThread.java</code></p>
+<p>Everything is in place now. Let&#8217;s start some threads using JRuby <span class="caps">IRB</span>:<br />
+<code>t = Thread.new do puts "New thread started at #{Time.now}" end</code></p>
+<p>Everytime a new thread starts you should see &#8216;about to start a thread!&#8217; .</p>
+<pre>
+D:\&gt;C:\Programme\Java\btrace\bin\btrace 17404 BTraceThread.java
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+about to start a thread!
+</pre>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Performance Testing: Quick Tip: Handling very large log files]]></title>
+    <link href="http://martingross.github.io/articles/172/performance-testing-quick-tip-handling-very-large-log-files"/>
+    <updated>2010-10-15T15:40:20+02:00</updated>
+    <id>http://martingross.github.io/articles/172/performance-testing-quick-tip-handling-very-large-log-files</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/tonyapoole/2952757091/" title="Flex by adventurejournalist, on Flickr"><img src="http://farm4.static.flickr.com/3140/2952757091_b8d500a7a0_m.jpg" width="240" height="160" alt="Flex" /></a></p>
+<p>Logfiles tend to grow and grow and grow. The other day I had a log file about 1.3 GB large.</p>
+<p>The relevant logging was only in one part of the file. Handling such a big file is a nightmare using most editors. I could open it but the editor would crash as soon as I tried to delete some parts of the file.</p>
+<p>What I needed was the part of the file which contains the log entries for the load test, i.e. split the file into smaller parts &#8211; or &#8211; even better, cut the parts off that I would not need for my analysis.</p>
+<p>As expected Unix-based operating systems have some built-in tools for this task:</p>
+<p><a href="http://www.oreillynet.com/linux/cmd/cmd.csp?path=s/split">split</a> : Splits a file into equal-sized parts.</p>
+<p>or</p>
+<p><a href="http://www.oreillynet.com/linux/cmd/cmd.csp?path=c/csplit">csplit</a> : Splits a file into context-based parts.</p>
+<p>Examples:</p>
+<p>Create a new file named &#8216;output.log.00&#8217; . It should contain only the part of the file input.log beginning with the line that matches the regular expression &#8216;^17:15:&#8217; . I.e. give me everything from 17:15 until the end of the file:</p>
+<pre><code>csplit -f output.log. input.log '%^17:15:%'</code></pre>
+<p>Now create two files out of &#8216;output.log.00&#8217;: One containing everything before 18:00 (6pm) and one for the remaining part. I.e. I want a file named &#8216;log.17.00&#8217; which contains all log entries from 17:15 until 18:00 .</p>
+<pre><code>csplit -f log.17. output.log.00 '/^18:/'</code></pre>
+<p>Using Windows? I&#8217;d recommend to install <a href="http://www.cygwin.com/">cygwin</a> which provides split/csplit and many other useful Unix tools. In my opinion a must-have for every serious software developer working on this platform.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A dirty hack to get through an authenticating proxy with open-uri]]></title>
+    <link href="http://martingross.github.io/articles/171/a-dirty-hack-to-get-through-an-authenticating-proxy-with-open-uri"/>
+    <updated>2010-09-17T14:51:53+02:00</updated>
+    <id>http://martingross.github.io/articles/171/a-dirty-hack-to-get-through-an-authenticating-proxy-with-open-uri</id>
+    <content type="html"><![CDATA[<p>I had problems parsing a webpage with Nokogiri on JRuby 1.5.2 . The proxy authentication was the issue.</p>
+<p>Here is how I solved this issue:</p>
+<p>Set your environment variable HTTP_PROXY with your proxy data (user, password, <span class="caps">URL</span>, port) e.g.</p>
+<pre><code>HTTP_PROXY=http://prxuser:prxpasswd@prx-server:8080</code></pre>
+<p>Then change in lib\ruby\1.8\open-uri.rb, line 216, from:</p>
+<p><code>klass = Net::HTTP::Proxy(proxy.host, proxy.port)</code></p>
+<p>to:</p>
+<p><code>klass = Net::HTTP::Proxy(proxy.host, proxy.port, proxy.user, proxy.password)</code></p>
+<p>And test it with:</p>
+<pre><code>require 'rubygems'
+require 'nokogiri'
+require 'open-uri'
+html_doc = Nokogiri::HTML(open("http://www.google.com/search?hl=de&amp;q=software"))
+html_doc.css('h3&gt;a').each do |node|
+  puts node.text
+end
+</code></pre>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Symbolic links for directories on Win XP]]></title>
+    <link href="http://martingross.github.io/articles/170/symbolic-links-for-directories-on-win-xp"/>
+    <updated>2010-09-08T13:51:52+02:00</updated>
+    <id>http://martingross.github.io/articles/170/symbolic-links-for-directories-on-win-xp</id>
+    <content type="html"><![CDATA[<p>Symbolic links for directories are known as <span class="caps">NTFS</span> junctions in Windows. Sysinternals provides a tool for creating junctions: <a href="http://download.sysinternals.com/Files/Junction.zip">Junction.zip</a></p>
+<p>More about it at: <a href="http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx">http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx</a></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[17 Software Engineering Rules based on the UNIX Philosophy]]></title>
+    <link href="http://martingross.github.io/articles/169/17-software-engineering-rules-based-on-the-unix-philosophy"/>
+    <updated>2010-08-13T17:06:37+02:00</updated>
+    <id>http://martingross.github.io/articles/169/17-software-engineering-rules-based-on-the-unix-philosophy</id>
+    <content type="html"><![CDATA[<ol>
+	<li>Rule of Modularity: Write simple parts connected by clean interfaces.</li>
+	<li>Rule of Clarity: Clarity is better than cleverness.</li>
+	<li>Rule of Composition: Design programs to be connected to other programs.</li>
+	<li>Rule of Separation: Separate policy from mechanism; separate interfaces from engines.</li>
+	<li>Rule of Simplicity: Design for simplicity; add complexity only where you must.</li>
+	<li>Rule of Parsimony: Write a big program only when it is clear by demonstration that nothing else will do.</li>
+	<li>Rule of Transparency: Design for visibility to make inspection and debugging easier.</li>
+	<li>Rule of Robustness: Robustness is the child of transparency and simplicity.</li>
+	<li>Rule of Representation: Fold knowledge into data so program logic can be stupid and robust.</li>
+	<li>Rule of Least Surprise: In interface design, always do the least surprising thing.</li>
+	<li>Rule of Silence: When a program has nothing surprising to say, it should say nothing.</li>
+	<li>Rule of Repair: When you must fail, fail noisily and as soon as possible.</li>
+	<li>Rule of Economy: Programmer time is expensive; conserve it in preference to machine time.</li>
+	<li>Rule of Generation: Avoid hand-hacking; write programs to write programs when you can.</li>
+	<li>Rule of Optimization: Prototype before polishing. Get it working before you optimize it.</li>
+	<li>Rule of Diversity: Distrust all claims for “one true way”.</li>
+	<li>Rule of Extensibility: Design for the future, because it will be here sooner than you think.</li>
+</ol>
+<p>From &#8216;Basics of the Unix Philosophy&#8217;: <a href="http://www.faqs.org/docs/artu/ch01s06.html">http://www.faqs.org/docs/artu/ch01s06.html</a></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[git with github through a firewall]]></title>
+    <link href="http://martingross.github.io/articles/168/accessing-github-through-a-firewall"/>
+    <updated>2010-07-21T13:15:58+02:00</updated>
+    <id>http://martingross.github.io/articles/168/accessing-github-through-a-firewall</id>
+    <content type="html"><![CDATA[<p>Git supports a new, much more efficient <span class="caps">HTTP</span> based transport as of version 1.6.6.</p>
+<p>With the git&#8217;s new <a href="http://progit.org/2010/03/04/smart-http.html">Smart <span class="caps">HTTP</span> support</a> it is possible to access <a href="http://github.com">github</a> even without ssh access.  <span class="caps">SSH</span> access is typically not possible from behind a corporate firewall. Though, most environments allow http through a (authenticating) proxy. With http support it is possible under these circumstances to access github, you can now push over that protocol and clone private repositories as well.</p>
+<p>To clone one of your repositories having push access as well, you can clone this way:</p>
+<pre><code>git clone https://username@github.com/username/project.git</code></pre>
+<p>Be sure to use <span class="caps">SSL</span> (https) as git asks for your github password and sends your password unencrypted over the wire.</p>
+<p>For a public repository you can use:<br />
+<code>git clone http://github.com/username/project.git</code></p>
+<p>You need Git client version 1.6.6 or greater. For windows you can download it here:<br />
+<a href="http://code.google.com/p/msysgit/downloads/list">http://code.google.com/p/msysgit/downloads/list</a></p>
+<p>After the install be sure to set the path environment variable to the directory C:\Program Files\Git\cmd\ or whereever git is installed on your computer.</p>
+<p>Set both (https and http) proxy environment variables:</p>
+<pre><code>HTTPS_PROXY=http://user:password@proxy.firma.de:port
+HTTP_PROXY=http://user:password@proxy.firma.de:port</code></pre>
+<p>I got the following error message:</p>
+<pre><code>error: error setting certificate verify locations:
+  CAfile: /bin/curl-ca-bundle.crt
+  CApath: none
+ while accessing https://mgross@github.com/mgross/gmailr.git/info/refs</code></pre>
+<p>Which was solved by setting git config:</p>
+<p><code>git config --global http.sslverify false</code></p>
+<p>To push your changes to github use the following command:<br />
+<code>git push origin master</code></p>
+<p>More about &#8216;Working with Remotes&#8217; can be found at <a href="http://progit.org/book/ch2-5.html">Pro Git</a></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[State of Flow]]></title>
+    <link href="http://martingross.github.io/articles/166/state-of-flow"/>
+    <updated>2010-06-28T19:43:31+02:00</updated>
+    <id>http://martingross.github.io/articles/166/state-of-flow</id>
+    <content type="html"><![CDATA[<p>&#8220;What makes a life worth living?&#8221; Noting that money cannot make us happy, he looks to those who find pleasure and lasting satisfaction in activities that bring about a state of &#8220;flow.&#8221;</p>
+<p><object width="446" height="326"><param name="movie" value="http://video.ted.com/assets/player/swf/EmbedPlayer.swf"></param><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always"/><param name="wmode" value="transparent"></param><param name="bgColor" value="#ffffff"></param> <param name="flashvars" value="vu=http://video.ted.com/talks/dynamic/MihalyCsikszentmihalyi_2004-medium.flv&su=http://images.ted.com/images/ted/tedindex/embed-posters/MihalyCsikszentmihalyi-2004.embed_thumbnail.jpg&vw=432&vh=240&ap=0&ti=366&introDuration=15330&adDuration=4000&postAdDuration=830&adKeys=talk=mihaly_csikszentmihalyi_on_flow;year=2004;theme=unconventional_explanations;theme=the_creative_spark;theme=how_the_mind_works;event=TED2004;&preAdTag=tconf.ted/embed;tile=1;sz=512x288;" /><embed src="http://video.ted.com/assets/player/swf/EmbedPlayer.swf" pluginspace="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" bgColor="#ffffff" width="446" height="326" allowFullScreen="true" allowScriptAccess="always" flashvars="vu=http://video.ted.com/talks/dynamic/MihalyCsikszentmihalyi_2004-medium.flv&su=http://images.ted.com/images/ted/tedindex/embed-posters/MihalyCsikszentmihalyi-2004.embed_thumbnail.jpg&vw=432&vh=240&ap=0&ti=366&introDuration=15330&adDuration=4000&postAdDuration=830&adKeys=talk=mihaly_csikszentmihalyi_on_flow;year=2004;theme=unconventional_explanations;theme=the_creative_spark;theme=how_the_mind_works;event=TED2004;"></embed></object></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Some successful european SaaS startups]]></title>
+    <link href="http://martingross.github.io/articles/165/some-european-saas-success-stories"/>
+    <updated>2010-06-28T19:13:32+02:00</updated>
+    <id>http://martingross.github.io/articles/165/some-european-saas-success-stories</id>
+    <content type="html"><![CDATA[<p>Might serve as inspiration for bootstrapping in continental Europe:</p>
+<p><a href="http://letsannotate.com/" title="Vienna">letsannotate.com</a><br />
+<a href="http://letsfreckle.com" title="Vienna">letsfreckle.com</a><br />
+<a href="http://mite.yo.lk/" title="Berlin">mite.yo.lk</a><br />
+<a href="http://www.mindmeister.com/" title="Munich">mindmeister.com</a></p>]]></content>
+  </entry>
+  
+</feed>

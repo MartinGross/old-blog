@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Entrepreneur | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/entrepreneur/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Some successful european SaaS startups]]></title>
+    <link href="http://martingross.github.io/articles/165/some-european-saas-success-stories"/>
+    <updated>2010-06-28T19:13:32+02:00</updated>
+    <id>http://martingross.github.io/articles/165/some-european-saas-success-stories</id>
+    <content type="html"><![CDATA[<p>Might serve as inspiration for bootstrapping in continental Europe:</p>
+
+<p>"letsannotate.com (Vienna)":http://letsannotate.com/
+"letsfreckle.com (Vienna)":http://letsfreckle.com
+"mite.yo.lk (Berlin)":http://mite.yo.lk/
+"mindmeister.com (Munich)":http://www.mindmeister.com/</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Motivation, incentives, money]]></title>
+    <link href="http://martingross.github.io/articles/162/motivation-incentives-money"/>
+    <updated>2010-06-17T13:27:20+02:00</updated>
+    <id>http://martingross.github.io/articles/162/motivation-incentives-money</id>
+    <content type="html"><![CDATA[<p>The surprising truth about what motivates us:</p>
+
+<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/u6XAPnuFjJc&color1=0xb1b1b1&color2=0xd0d0d0&hl=en_US&feature=player_embedded&fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><embed src="http://www.youtube.com/v/u6XAPnuFjJc&color1=0xb1b1b1&color2=0xd0d0d0&hl=en_US&feature=player_embedded&fs=1" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="385"></embed></object>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Startup Entrepreneur Links of the Week]]></title>
+    <link href="http://martingross.github.io/articles/151/startup-entrepreneur-links-of-the-week"/>
+    <updated>2010-02-19T15:09:04+01:00</updated>
+    <id>http://martingross.github.io/articles/151/startup-entrepreneur-links-of-the-week</id>
+    <content type="html"><![CDATA[<p>"Indicators that you should take VC money":http://www.joelonsoftware.com/items/2010/02/14.html</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Startup Entrepreneur Links of Week 6]]></title>
+    <link href="http://martingross.github.io/articles/150/startup-entrepreneur-links-of-week-6"/>
+    <updated>2010-02-09T20:14:29+01:00</updated>
+    <id>http://martingross.github.io/articles/150/startup-entrepreneur-links-of-week-6</id>
+    <content type="html"><![CDATA[<p>"Copying Y Combinator WHY and HOW":http://blog.jedchristiansen.com/2009/09/21/copying-y-combinator-why-and-how/</p>
+
+<p>"Minimalist Marketing":http://intrepid-llc.com/2010/02/06/minimalist-marketing/</p>
+
+<p>"101 Small Business Mistakes (and What You Can Learn From Them)":http://www.openforum.com/idea-hub/topics/money/article/101-small-business-mistakes-and-what-you-can-learn-from-them-gregory-go</p>
+
+<p>"If your product is Great, it doesn't need to be Good.":http://paulbuchheit.blogspot.com/2010/02/if-your-product-is-great-it-doesnt-need.html</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Startup Entrepreneur Links of Week 37]]></title>
+    <link href="http://martingross.github.io/articles/142/"/>
+    <updated>2009-09-11T17:40:20+02:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>"Advisory Board: Small Investment, Large Payback":http://blog.startupprofessionals.com/2009/07/advisory-board-small-investment-large.html</p>
+
+<p>"9 Must Read Sources On Pricing Your App":http://www.fuelyourapps.com/9-must-read-sources-on-pricing-your-app/</p>
+
+<p>"Startup Tips for Enterprise Software Pricing":http://onstartups.com/tabid/3339/bid/174/Startup-Tips-for-Enterprise-Software-Pricing.aspx</p>
+
+<p>"You're a little company, now act like one":http://blog.asmartbear.com/blog/youre-a-little-company-now-act-like-one.html</p>
+
+<p>"Key Thing to Ask When Hiring Designers":http://www.instigatorblog.com/hiring-designers/2009/08/10/</p>
+
+<p>"Can You Eliminate Fear?":http://www.josephayi.com/blog/life/can-you-eliminate-fear/</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: todo | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/todo/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Action-based vs. Goal-based Doing]]></title>
+    <link href="http://martingross.github.io/blog/2013/04/20/action-based-vs-goal-based-doing/"/>
+    <updated>2013-04-20T21:58:00+02:00</updated>
+    <id>http://martingross.github.io/blog/2013/04/20/action-based-vs-goal-based-doing</id>
+    <content type="html"><![CDATA[<p>If you follow the 'Getting Things Done' approach you know the to do lists that detail all the actions. Actions you wrote down. Actions you are supposed to do to achieve the completion of your projects.</p>
+
+<p>The problem with action based to do lists is that they just tell you the action you should do.</p>
+
+<p>When looking at them you don't start thinking about</p>
+
+<ul>
+<li>the goal</li>
+<li>is it really required</li>
+<li>is there another, smarter or faster way to do it</li>
+<li>can you delegate it</li>
+<li>how could you save some time doing it in a different way</li>
+</ul>
+
+
+<!-- more -->
+
+
+<p>Sometimes it is better to write down a goal you want to achieve. Not how to do it. This gives you options how to achieve that goal. It doesn't force you execute an action but gives the opportunity to find creative solutions.</p>
+
+<p>It let's you find shortcuts instead of stupidly just doing something. And it motivates because you know what will be the outcome.</p>
+]]></content>
+  </entry>
+  
+</feed>

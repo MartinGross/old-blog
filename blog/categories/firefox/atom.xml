@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Firefox | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/firefox/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[FireBug Net Panel Explained]]></title>
+    <link href="http://martingross.github.io/articles/159/firebug-net-panel-explained"/>
+    <updated>2010-05-05T16:53:33+02:00</updated>
+    <id>http://martingross.github.io/articles/159/firebug-net-panel-explained</id>
+    <content type="html"><![CDATA[<p>"Jan Odvarko":http://www.softwareishard.com/blog/about/ wrote a "detailed explanation of the FireBug Net panel":http://www.softwareishard.com/blog/firebug/introduction-to-firebug-net-panel/  and another one "explaining the timing data in particular":http://www.softwareishard.com/blog/firebug/firebug-net-panel-timings/.</p>
+
+<p>!http://www.datazoo.de/images/8.png!</p>
+
+<p>Really useful and something I couldn't find anywhere else including the "FireBug website":http://getfirebug.com/network .</p>
+]]></content>
+  </entry>
+  
+</feed>

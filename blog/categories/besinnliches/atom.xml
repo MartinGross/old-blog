@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Besinnliches | DATA ZOO]]></title>
+  <link href="http://martingross.github.io/blog/categories/besinnliches/atom.xml" rel="self"/>
+  <link href="http://martingross.github.io/"/>
+  <updated>2014-03-19T00:40:23+01:00</updated>
+  <id>http://martingross.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Gross]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Gegenwart]]></title>
+    <link href="http://martingross.github.io/articles/178/gegenwart"/>
+    <updated>2011-06-25T16:08:42+02:00</updated>
+    <id>http://martingross.github.io/articles/178/gegenwart</id>
+    <content type="html"><![CDATA[<p>bq. "Nur wenige leben in der Gegenwart; die meisten bereiten sich darauf vor, demnächst zu leben." Jonathan Swift</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beharrlichkeit (perseverance)]]></title>
+    <link href="http://martingross.github.io/articles/106/"/>
+    <updated>2007-07-18T15:41:35+02:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>Albert Einstein said:</p>
+
+<p>bq. It's not that I'm so smart, it's just that I stay with problems longer.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Twenty years from now ...]]></title>
+    <link href="http://martingross.github.io/articles/103/"/>
+    <updated>2007-04-17T11:19:23+02:00</updated>
+    <id>http://martingross.github.io/articles/</id>
+    <content type="html"><![CDATA[<p>"Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover." - Mark Twain</p>
+]]></content>
+  </entry>
+  
+</feed>
