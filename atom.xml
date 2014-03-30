@@ -4,7 +4,7 @@
   <title><![CDATA[DATA ZOO]]></title>
   <link href="http://martingross.github.io/atom.xml" rel="self"/>
   <link href="http://martingross.github.io/"/>
-  <updated>2014-03-19T01:14:58+01:00</updated>
+  <updated>2014-03-31T01:07:30+02:00</updated>
   <id>http://martingross.github.io/</id>
   <author>
     <name><![CDATA[Martin Gross]]></name>
@@ -12,169 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Action-based vs. Goal-based Doing]]></title>
-    <link href="http://martingross.github.io/blog/2013/04/20/action-based-vs-goal-based-doing/"/>
-    <updated>2013-04-20T21:58:00+02:00</updated>
-    <id>http://martingross.github.io/blog/2013/04/20/action-based-vs-goal-based-doing</id>
-    <content type="html"><![CDATA[<p>If you follow the &#8216;Getting Things Done&#8217; approach you know the to do lists that detail all the actions. Actions you wrote down. Actions you are supposed to do to achieve the completion of your projects.</p>
-
-<p>The problem with action based to do lists is that they just tell you the action you should do.</p>
-
-<p>When looking at them you don&#8217;t start thinking about</p>
-
-<ul>
-<li>the goal</li>
-<li>is it really required</li>
-<li>is there another, smarter or faster way to do it</li>
-<li>can you delegate it</li>
-<li>how could you save some time doing it in a different way</li>
-</ul>
-
-
-<!-- more -->
-
-
-<p>Sometimes it is better to write down a goal you want to achieve. Not how to do it. This gives you options how to achieve that goal. It doesn&#8217;t force you execute an action but gives the opportunity to find creative solutions.</p>
-
-<p>It let&#8217;s you find shortcuts instead of stupidly just doing something. And it motivates because you know what will be the outcome.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Deconstructing encrypted and signed SOAP messages - Part 1]]></title>
-    <link href="http://martingross.github.io/blog/2013/04/13/deconstructing-encrypted-and-signed-soap-messages-part-1/"/>
-    <updated>2013-04-13T22:31:00+02:00</updated>
-    <id>http://martingross.github.io/blog/2013/04/13/deconstructing-encrypted-and-signed-soap-messages-part-1</id>
-    <content type="html"><![CDATA[<p>Ever wondered how an encrypted and signed SOAP request looks alike?</p>
-
-<p>I saw quite a lot of them at work when I analyzed security compatibility issues between .NET clients and Java Webservices with Apache Axis2.</p>
-
-<p>Here is a real request but with sensitive data removed:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;</span>
-</span><span class='line'><span class="nt">&lt;soapenv:Envelope</span> <span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="na">xmlns:wsa=</span><span class="s">&quot;http://www.w3.org/2005/08/addressing&quot;</span> <span class="na">xmlns:xenc=</span><span class="s">&quot;http://www.w3.org/2001/04/xmlenc#&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;soapenv:Header&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;wsse:Security</span> <span class="na">xmlns:wsse=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;</span> <span class="na">soapenv:mustUnderstand=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;xenc:EncryptedKey</span> <span class="na">Id=</span><span class="s">&quot;EncKeyId-urn:uuid:07B356A4F98142A54513613288059762&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;xenc:EncryptionMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2001/04/xmlenc#rsa-1_5&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;ds:KeyInfo</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;wsse:SecurityTokenReference&gt;</span>
-</span><span class='line'>            <span class="nt">&lt;wsse:KeyIdentifier</span> <span class="na">EncodingType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;</span> <span class="na">ValueType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509SubjectKeyIdentifier&quot;</span><span class="nt">&gt;</span>aU53M6ufa/yIi/8Cf0SYnDqFNxg=<span class="nt">&lt;/wsse:KeyIdentifier&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;/wsse:SecurityTokenReference&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;/ds:KeyInfo&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;xenc:CipherData&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;xenc:CipherValue&gt;</span>rCW...tms=<span class="nt">&lt;/xenc:CipherValue&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;/xenc:CipherData&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;xenc:ReferenceList&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;xenc:DataReference</span> <span class="na">URI=</span><span class="s">&quot;#EncDataId-917483082&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;/xenc:ReferenceList&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;/xenc:EncryptedKey&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;wsse:BinarySecurityToken</span> <span class="na">xmlns:wsu=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;</span> <span class="na">EncodingType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;</span> <span class="na">ValueType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3&quot;</span> <span class="na">wsu:Id=</span><span class="s">&quot;CertId-11497308&quot;</span><span class="nt">&gt;</span>MII...3za<span class="nt">&lt;/wsse:BinarySecurityToken&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;ds:Signature</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span> <span class="na">Id=</span><span class="s">&quot;Signature-2113162951&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;ds:SignedInfo&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;ds:CanonicalizationMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;ds:SignatureMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#rsa-sha1&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;ds:Reference</span> <span class="na">URI=</span><span class="s">&quot;#id-917483082&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>            <span class="nt">&lt;ds:Transforms&gt;</span>
-</span><span class='line'>              <span class="nt">&lt;ds:Transform</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>            <span class="nt">&lt;/ds:Transforms&gt;</span>
-</span><span class='line'>            <span class="nt">&lt;ds:DigestMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>            <span class="nt">&lt;ds:DigestValue&gt;</span>mjnRJrB+7XLz3lQiAJ1doc17OJw=<span class="nt">&lt;/ds:DigestValue&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;/ds:Reference&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;/ds:SignedInfo&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;ds:SignatureValue&gt;</span>H2e...h7uH1STc/o=<span class="nt">&lt;/ds:SignatureValue&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;ds:KeyInfo</span> <span class="na">Id=</span><span class="s">&quot;KeyId-1203935139&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;wsse:SecurityTokenReference</span> <span class="na">xmlns:wsu=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;</span> <span class="na">wsu:Id=</span><span class="s">&quot;STRId-540941256&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>            <span class="nt">&lt;wsse:Reference</span> <span class="na">URI=</span><span class="s">&quot;#CertId-11497308&quot;</span> <span class="na">ValueType=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;/wsse:SecurityTokenReference&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;/ds:KeyInfo&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;/ds:Signature&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;/wsse:Security&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;wsa:To&gt;</span>http://cool.sys.com/services/WebService_v0.3<span class="nt">&lt;/wsa:To&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;wsa:MessageID&gt;</span>urn:uuid:C63E757221CBA561F61361328805225<span class="nt">&lt;/wsa:MessageID&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;wsa:Action&gt;</span>urn:processdata<span class="nt">&lt;/wsa:Action&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;/soapenv:Header&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;soapenv:Body</span> <span class="na">xmlns:wsu=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;</span> <span class="na">wsu:Id=</span><span class="s">&quot;id-917483082&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;xenc:EncryptedData</span> <span class="na">Id=</span><span class="s">&quot;EncDataId-917483082&quot;</span> <span class="na">Type=</span><span class="s">&quot;http://www.w3.org/2001/04/xmlenc#Content&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;xenc:EncryptionMethod</span> <span class="na">Algorithm=</span><span class="s">&quot;http://www.w3.org/2001/04/xmlenc#aes128-cbc&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;ds:KeyInfo</span> <span class="na">xmlns:ds=</span><span class="s">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;wsse:SecurityTokenReference</span> <span class="na">xmlns:wsse=</span><span class="s">&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;wsse:Reference</span> <span class="na">URI=</span><span class="s">&quot;#EncKeyId-urn:uuid:07B356A4F98142A54513613288059762&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;/wsse:SecurityTokenReference&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;/ds:KeyInfo&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;xenc:CipherData&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;xenc:CipherValue&gt;</span>PNpIO59dbpT...MlYAynP3p7wRxf9YItPQ==<span class="nt">&lt;/xenc:CipherValue&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;/xenc:CipherData&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;/xenc:EncryptedData&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;/soapenv:Body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/soapenv:Envelope&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Looks quite complicated but if you understand the basics it will get easier. Most of this is defined by the WS-Security standard. http://www2.sys-con.com/itsg/virtualcd/dotnet/archives/0105/bristowe/index.html</p>
-
-<p>Let&#8217;s have a look at the structure. For the moment I will ignore namespaces to keep things short and simple.</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Testing web apps with Selenium Page Objects]]></title>
@@ -500,6 +337,33 @@ HTTP_PROXY=http://user:password@proxy.firma.de:port</code></pre>
 <a href="http://letsfreckle.com" title="Vienna">letsfreckle.com</a><br />
 <a href="http://mite.yo.lk/" title="Berlin">mite.yo.lk</a><br />
 <a href="http://www.mindmeister.com/" title="Munich">mindmeister.com</a></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Merging PDF files using free opensource software]]></title>
+    <link href="http://martingross.github.io/articles/164/merging-pdf-files-using-free-opensource-software"/>
+    <updated>2010-06-23T16:00:16+02:00</updated>
+    <id>http://martingross.github.io/articles/164/merging-pdf-files-using-free-opensource-software</id>
+    <content type="html"><![CDATA[<p>Using <a href="http://sourceforge.net/projects/pdfcreator/">PDFCreator</a> you can merge any number of different file types, including (parts of) <span class="caps">PDF</span> files, into one <span class="caps">PDF</span>.</p>
+<p>PDFCreator is a Windows tool that can be used like a printer.</p>
+<blockquote>
+<p><cite>&#8220;When printing anything to PDFCreator &#8230; On the bottom of that window you&#8217;ll find several buttons: Cancel, Waiting, Options, eMail and Save. Most of these buttons don&#8217;t need further explanation, but the power of one of them may easily be overseen: the marvellous Waiting-button.&#8221;</cite></p>
+</blockquote>
+<blockquote>
+<p><cite>&#8220;Clicking the Waiting-button opens the main window of PDFCreator. &#8230; PDFCreator will wait for you to add another &#8216;print&#8217; job, for you to change the order of the existing jobs, or for you &#8211; here comes the magic word &#8211; to combine existing jobs. As soon as you&#8217;re ready adding, changing order and combining jobs, click one to select it for &#8216;printing&#8217; and choose Print from the Document menu or press Ctrl+P. The old familiar window will reappear, and clicking Save will then bring up a window asking for a name and location to save your new <span class="caps">PDF</span> file.&#8221;</cite></p>
+</blockquote>
+<p>Found at <a href="http://arjenvankol.com/freeware-pdf.php">http://arjenvankol.com/freeware-pdf.php</a></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Maven Build without running JUnit tests]]></title>
+    <link href="http://martingross.github.io/articles/163/maven-build-without-running-junit-tests"/>
+    <updated>2010-06-21T18:47:44+02:00</updated>
+    <id>http://martingross.github.io/articles/163/maven-build-without-running-junit-tests</id>
+    <content type="html"><![CDATA[<p>If you don&#8217;t want to execute the tests:</p>
+<p><code>mvn clean install -DskipTests</code></p>
+<p>If you want to skip compiling of the tests too:</p>
+<p><code>mvn clean install -Dmaven.test.skip=true</code></p>]]></content>
   </entry>
   
 </feed>

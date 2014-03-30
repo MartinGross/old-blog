@@ -9,7 +9,7 @@
   <meta name="author" content="Martin Gross">
 
   
-  <meta name="description" content="Zur Zeit arbeite ich in einem grÃ¶ÃŸeren Kundenprojekt, das Schnittstellen Ã¼ber das Internet nach aussen anbietet. Ãœber diese Schnittstellen werden &hellip;">
+  <meta name="description" content="Da ich zur Zeit mit einem Kunden die Anforderungen an eine neue Software erarbeite, hatte sich mir die Frage gestellt, wie man das am geschicktesten &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,107 +78,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/articles/126/">Web Services Security Mit WS-Security, Teil 1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-02-05T16:42:00+01:00" pubdate data-updated="true">Feb 5<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Zur Zeit arbeite ich in einem grÃ¶ÃŸeren Kundenprojekt, das Schnittstellen Ã¼ber das Internet nach aussen anbietet. Ãœber diese Schnittstellen werden unter anderem externe Buchungssysteme integriert. Als Basistechnologie werden Web Services eingesetzt. Die Verbindung wird Ã¼ber das Internet hergestellt.</p>
-<p>Da sensitive sprich wertvolle Daten (z.B. Zahlungsdaten) Ã¼bertragen werden, ist es natÃ¼rlich extrem wichtig die Vertraulichkeit der Ãœbertragung zu gewÃ¤hrleisten. Zum einen mÃ¶chte man verhindern, dass die Kommunikation belauscht werden kann. Zum anderen muss man sich sicher sein, dass das angebundene System wirklich das ist fÃ¼r das es sich ausgibt, um beispielsweise eine <a href="http://de.wikipedia.org/wiki/Man-In-The-Middle-Angriff">Man in the middle attack</a> zu verhindern. D. h. es muss eine gegenseitige <a href="http://de.wikipedia.org/wiki/Authentifizierung">Authentifizierung</a> stattfinden.</p>
-<p>Um das zu gewÃ¤hrleisten bietet sich WS-Security an. WS-Security ist einer der unzÃ¤hligen Web Services Standards. WS-Security bietet hierzu verschiedene MÃ¶glichkeiten an, die einem erst einmal die Entscheidung nicht einfach machen, welche man denn nun nehmen soll. In den nÃ¤chsten EintrÃ¤gen hier in diesem <a href="http://www.datazoo.de/">Blog</a> werde ich auf die gemachten Erfahrungen und theoretischen HintergrÃ¼nde eingehen.</p>
-<p>Gerade weil es oft nicht so einfach gelingt, WS-Security ohne Anfangsprobleme einzusetzen, ist ein VerstÃ¤ndnis der Grundlagen unverzichtbar. Wenn dann noch Java und .<span class="caps">NET</span> miteinander kommunizieren sollen, erhÃ¶ht man den Schwierigkeitsgrad erheblich, wie sich zeigte.</p>
-<p>Hinzu kommen FachausdrÃ¼cke wie Asymmetrisches Kryptosystem, Digitale Zertifikate, Public Key und Private Key etc., die einem den Einstieg auch nicht wirklich einfach machen. Viele Web Services laufen daher unverschlÃ¼sselt oder man setzt auf eine <span class="caps">SSL</span>-basierte VerschlÃ¼sselung der gesamten Verbindung (man denke einfach an https), was auch so einige Nachteile hat (doch dazu spÃ¤ter mehr). Es ist also ein spannendes und vielschichtiges Thema.</p>
-<p>Fortsetzung folgt &#8230;</p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/articles/125/">Remote Debugging an Axis2 Web Service With Intellij IDEA</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-02-02T16:50:00+01:00" pubdate data-updated="true">Feb 2<span>nd</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>At <a href="https://wso2.org/library/3851">wso2.org</a> Eran Chinthaka described how to debug a web service remotely.</p>
-<p>I am summarizing the most important things assuming that you have already Axis and your web service deployed to Apache Tomcat. The web service needs to be also available in <span class="caps">IDEA</span> as Java source ( of course).</p>
-<p>The next steps are:</p>
-<ol>
-	<li>Start Tomcat with debugging options</li>
-	<li>Add a new Run/Debug Configuration in Intellij <span class="caps">IDEA</span></li>
-	<li>Choose the configuration and start debug</li>
-</ol>
-<p><strong>Start Tomcat with debugging options</strong></p>
-<p>Add the following <span class="caps">JVM</span> parameters to your tomcat start script:</p>
-<pre name="code" class="js:nocontrols">
--Xdebug
--Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
-</pre>
-<p>Now you are ready to start. Start tomcat and it will listen on port 5005 for your debugger.</p>
-<p><strong>Add a new Run/Debug Configuration in Intellij <span class="caps">IDEA</span></strong></p>
-<ol>
-	<li>Goto &#8220;Run&#8221; menu and select &#8220;Edit Configurations&#8221;.</li>
-	<li>Click on &#8220;+&#8221; and select &#8220;Remote&#8221; from the menu. Just keep the default configuration there with Port 5005 and localhost, if Tomcat is running on the same machine as <span class="caps">IDEA</span>. Otherwise enter another host.</li>
-	<li>Give a meaningful name in the &#8216;name&#8217; text box like &#8216;Local Tomcat Debug&#8217; and press &#8220;OK&#8221;. You should now be able to see your new configuration, under the runnable items menu.</li>
-</ol>
-<p>As Eran Chinthaka describes:</p>
-<blockquote>
-<p>&#8220;You are now all set to receive debug messages from Tomcat. Mark debugging points at proper locations you want to debug and send a <span class="caps">SOAP</span> message to your Web service. You should now be able to see your debug points highlighted when the execution hit those marked locations.&#8221;</p>
-</blockquote>
-<p><strong>Choose the configuration and start debug</strong></p>
-<p>Choose your configuration from the drop down menu in <span class="caps">IDEA</span> button bar. Click on the debug button, to start connecting to Tomcat. Now you are attached to Tomcat and can send requests to your web service.</p></div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -652,6 +551,79 @@ java.lang.NoClassDefFoundError: javax/wsdl/WSDLException
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/articles/106/">Beharrlichkeit (Perseverance)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-07-18T15:41:35+02:00" pubdate data-updated="true">Jul 18<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Albert Einstein said:</p>
+<blockquote>
+<p>It&#8217;s not that I&#8217;m so smart, it&#8217;s just that I stay with problems longer.</p>
+</blockquote></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/articles/103/">Twenty Years From Now &#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-04-17T11:19:23+02:00" pubdate data-updated="true">Apr 17<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>&#8220;Twenty years from now you will be more disappointed by the things that you didn&#8217;t do than by the ones you did. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover.&#8221; &#8211; Mark Twain</p></div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -674,14 +646,6 @@ java.lang.NoClassDefFoundError: javax/wsdl/WSDLException
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/04/20/action-based-vs-goal-based-doing/">Action-based vs. Goal-based Doing</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/13/deconstructing-encrypted-and-signed-soap-messages-part-1/">Deconstructing encrypted and signed SOAP messages - Part 1</a>
-      </li>
-    
-      <li class="post">
         <a href="/articles/184/testing-web-apps-with-selenium-page-objects">Testing web apps with Selenium Page Objects</a>
       </li>
     
@@ -691,6 +655,14 @@ java.lang.NoClassDefFoundError: javax/wsdl/WSDLException
     
       <li class="post">
         <a href="/articles/182/building-high-performance-development-teams">Building High Performance Development Teams</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/181/blog-about-jruby-resources">Blog about JRuby Resources</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/180/html5-sectioning-content-elements">HTML5: Sectioning content elements </a>
       </li>
     
   </ul>

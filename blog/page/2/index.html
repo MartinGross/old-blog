@@ -9,7 +9,7 @@
   <meta name="author" content="Martin Gross">
 
   
-  <meta name="description" content="Chris Heald shows in his article &#8216;JRuby Performance: Exceptions are not flow control&#8217; how the anti-pattern of using &#8216;exceptions as &hellip;">
+  <meta name="description" content="You can think of BTrace as a scriptable debugger or logger: you set breakpoints and when your breakpoints are hit some script gets executed: It is a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,83 +78,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/articles/176/jruby-as-an-exceptions-as-flow-control-detector">JRuby as an Exceptions-as-flow-control Detector</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-18T12:40:18+02:00" pubdate data-updated="true">Jun 18<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Chris Heald shows in his <a href="http://www.coffeepowered.net/2011/06/17/jruby-performance-exceptions-are-not-flow-control/">article &#8216;JRuby Performance: Exceptions are not flow control&#8217;</a> how the anti-pattern of using &#8216;exceptions as flow control&#8217; has an serious effect on the performance.</p>
-<p>Thanks to <a href="http://twitter.com/#!/headius">headius</a> logging the exceptions is as easy as:</p>
-<p><code>jruby -Xlog.exceptions=true -Xlog.backtraces=true -Xlog.callers=true -S trinidad 2&gt;&amp;1 | grep "Backtrace generated" -A4</code></p>
-<p><span class="caps">BTW</span>: <a href="https://github.com/trinidad/trinidad">trinidad</a> is used to run rails and rackup applications in an embedded Apache Tomcat</p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/articles/175/uml-notation-auf-einer-seite-erklaert">UML Notation Auf Einer Seite</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-08T11:20:40+01:00" pubdate data-updated="true">Feb 8<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Eine der besten und prägnantesten Übersichten für die <span class="caps">UML</span> (Unified Modelling Language) habe ich bei <a href="http://de.wikipedia.org/wiki/Unified_Modeling_Language">Wikipedia</a> gefunden.</p>
-<p><a href="http://www.datazoo.de/file_download/1/UML-Diagramme.pdf"><img src="http://www.datazoo.de/images/11.png" alt="" /></a></p>
-<p>Leider wurde es dort nur im <span class="caps">PNG</span> bzw. <span class="caps">SVG</span> Format veröffentlicht. Daher habe ich es vom Vektorformat direkt nach <span class="caps">PDF</span> konvertiert, das sich am besten von allen Formaten ausdrucken läßt.</p>
-<p>Herunterzuladen hier:</p>
-<p><a href="http://www.datazoo.de/file_download/1/UML-Diagramme.pdf"><span class="caps">UML</span>-Diagramme.pdf</a></p></div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -587,6 +510,87 @@ HTTP_PROXY=http://user:password@proxy.firma.de:port</code></pre>
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/articles/164/merging-pdf-files-using-free-opensource-software">Merging PDF Files Using Free Opensource Software</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-23T16:00:16+02:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Using <a href="http://sourceforge.net/projects/pdfcreator/">PDFCreator</a> you can merge any number of different file types, including (parts of) <span class="caps">PDF</span> files, into one <span class="caps">PDF</span>.</p>
+<p>PDFCreator is a Windows tool that can be used like a printer.</p>
+<blockquote>
+<p><cite>&#8220;When printing anything to PDFCreator &#8230; On the bottom of that window you&#8217;ll find several buttons: Cancel, Waiting, Options, eMail and Save. Most of these buttons don&#8217;t need further explanation, but the power of one of them may easily be overseen: the marvellous Waiting-button.&#8221;</cite></p>
+</blockquote>
+<blockquote>
+<p><cite>&#8220;Clicking the Waiting-button opens the main window of PDFCreator. &#8230; PDFCreator will wait for you to add another &#8216;print&#8217; job, for you to change the order of the existing jobs, or for you &#8211; here comes the magic word &#8211; to combine existing jobs. As soon as you&#8217;re ready adding, changing order and combining jobs, click one to select it for &#8216;printing&#8217; and choose Print from the Document menu or press Ctrl+P. The old familiar window will reappear, and clicking Save will then bring up a window asking for a name and location to save your new <span class="caps">PDF</span> file.&#8221;</cite></p>
+</blockquote>
+<p>Found at <a href="http://arjenvankol.com/freeware-pdf.php">http://arjenvankol.com/freeware-pdf.php</a></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/articles/163/maven-build-without-running-junit-tests">Maven Build Without Running JUnit Tests</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-21T18:47:44+02:00" pubdate data-updated="true">Jun 21<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you don&#8217;t want to execute the tests:</p>
+<p><code>mvn clean install -DskipTests</code></p>
+<p>If you want to skip compiling of the tests too:</p>
+<p><code>mvn clean install -Dmaven.test.skip=true</code></p></div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -609,14 +613,6 @@ HTTP_PROXY=http://user:password@proxy.firma.de:port</code></pre>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/04/20/action-based-vs-goal-based-doing/">Action-based vs. Goal-based Doing</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/13/deconstructing-encrypted-and-signed-soap-messages-part-1/">Deconstructing encrypted and signed SOAP messages - Part 1</a>
-      </li>
-    
-      <li class="post">
         <a href="/articles/184/testing-web-apps-with-selenium-page-objects">Testing web apps with Selenium Page Objects</a>
       </li>
     
@@ -626,6 +622,14 @@ HTTP_PROXY=http://user:password@proxy.firma.de:port</code></pre>
     
       <li class="post">
         <a href="/articles/182/building-high-performance-development-teams">Building High Performance Development Teams</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/181/blog-about-jruby-resources">Blog about JRuby Resources</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/180/html5-sectioning-content-elements">HTML5: Sectioning content elements </a>
       </li>
     
   </ul>

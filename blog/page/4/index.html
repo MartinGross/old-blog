@@ -9,8 +9,7 @@
   <meta name="author" content="Martin Gross">
 
   
-  <meta name="description" content="There are a lot of reasons to use git instead of svn . But it is hard to switch to a new version control system in a running project.
-git-svn is a &hellip;">
+  <meta name="description" content="Indicators that you should take VC money">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,100 +78,6 @@ git-svn is a &hellip;">
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/articles/152/a-work-around-for-slow-git-svn-clone-on-windows">A Work-around for Slow &#8220;Git Svn Clone&#8221; on Windows</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-03-09T13:03:15+01:00" pubdate data-updated="true">Mar 9<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There are a lot of reasons to use <a href="http://">git instead of svn</a> . But it is hard to switch to a new version control system in a running project.</p>
-<p><a href="http://">git-svn is a alternative</a> if you would like to use git with an existing subversion repository. Unfortunately <code>git svn clone</code> is <a href="http://osdir.com/ml/version-control.msysgit/2008-05/msg00112.html">dog slow on windows</a> . And I mean really slow. It would have taken more than 10 hours to clone an existing project from the subversion repository. As this wasn&#8217;t an option I decided to do something which might be useful for other purposes, too.</p>
-<p>The unconventional solution:<br />
-Run git-svn on Linux in virtual machine on Windows and copy it the complete directory to windows.</p>
-<p>Install VirtualBox<br />
-http://www.virtualbox.org/wiki/Downloads</p>
-<p>Download Ubuntu Image and unpack<br />
-VirtualBoxes has some <a href="http://virtualboxes.org/images/ubuntu/">ubuntu images ready to run</a>.</p>
-<p>Configure Ubuntu VM in Virtualbox</p>
-<p>Start Ubuntu</p>
-<p>Configure shared folders<br />
-<code></p>
-<ol>
-	<li>sudo mkdir /media/windows-share</li>
-</ol>
-<ol>
-	<li>sudo mount -t vboxsf folder-name /media/windows-share<br />
-</code></li>
-</ol>
-<p>Thanks to <a href="http://www.giannistsakiris.com/index.php/2008/04/09/virtualbox-access-windows-host-shared-folders-from-ubuntu-guest/">giannistsakiris.com</a></p>
-<p>Mount shared folder</p>
-<p>Install git-core</p>
-<p>Install git-svn</p>
-<p>run git svn clone</p>
-<p>copy directory to shared folder</p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/articles/153/git-svn-in-action">Git-svn in Action</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-03-04T15:34:17+01:00" pubdate data-updated="true">Mar 4<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>http://www.jukie.net/bart/blog/svn-branches-in-git</p></div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -481,6 +386,82 @@ Tests run: 7, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.052 sec</p>
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/articles/140/">Surfing in New York</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-29T16:41:37+02:00" pubdate data-updated="true">Jul 29<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/_5N7iaPN8tM&hl=de&fs=1&rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/_5N7iaPN8tM&hl=de&fs=1&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/articles/136/">Subject Key Identifier (SKI)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-17T15:50:00+02:00" pubdate data-updated="true">Jul 17<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The <a href="/article/137/x509-certificate">X.509 standard</a> defines extensions for Version 3. One of them is the <span class="caps">SKI</span> extension.</p>
+<p>From the spec:</p>
+<blockquote>
+<p>&#8220;The subject key identifier extension provides a means of identifying certificates that contain a particular public key. To facilitate certification path construction, this extension <span class="caps">MUST</span><br />
+appear in all conforming CA certificates.&#8221;</p>
+</blockquote>
+<p>The authority key identifier of a certificate contains the value of the subject key identifier of the CA (certificate authority) as a reference to that CA.</p></div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -503,14 +484,6 @@ Tests run: 7, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.052 sec</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/04/20/action-based-vs-goal-based-doing/">Action-based vs. Goal-based Doing</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/13/deconstructing-encrypted-and-signed-soap-messages-part-1/">Deconstructing encrypted and signed SOAP messages - Part 1</a>
-      </li>
-    
-      <li class="post">
         <a href="/articles/184/testing-web-apps-with-selenium-page-objects">Testing web apps with Selenium Page Objects</a>
       </li>
     
@@ -520,6 +493,14 @@ Tests run: 7, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.052 sec</p>
     
       <li class="post">
         <a href="/articles/182/building-high-performance-development-teams">Building High Performance Development Teams</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/181/blog-about-jruby-resources">Blog about JRuby Resources</a>
+      </li>
+    
+      <li class="post">
+        <a href="/articles/180/html5-sectioning-content-elements">HTML5: Sectioning content elements </a>
       </li>
     
   </ul>
